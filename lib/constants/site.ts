@@ -23,7 +23,7 @@ type ContactDetails = {
  * contact details are shown. Nothing is rendered as a blank or a dummy value.
  */
 const contact: ContactDetails = {
-  email: "hello@cherbix.com",
+  email: "info@cherbix.com",
   phone: "",
   location: "",
   availability: "Mon–Fri, 09:00–18:00 (GMT+5)",
