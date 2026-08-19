@@ -67,53 +67,50 @@ export default function ContactPage() {
                     value={siteConfig.contact.email}
                     href={`mailto:${siteConfig.contact.email}`}
                   />
-                  <ContactRow
-                    icon={<Phone size={16} strokeWidth={1.7} aria-hidden="true" />}
-                    label="Phone"
-                    value={siteConfig.contact.phone}
-                    href={`tel:${siteConfig.contact.phone.replace(/[^+\d]/g, "")}`}
-                  />
+                  {siteConfig.contact.phone ? (
+                    <ContactRow
+                      icon={<Phone size={16} strokeWidth={1.7} aria-hidden="true" />}
+                      label="Phone"
+                      value={siteConfig.contact.phone}
+                      href={`tel:${siteConfig.contact.phone.replace(/[^+\d]/g, "")}`}
+                    />
+                  ) : null}
                   <ContactRow
                     icon={<Clock size={16} strokeWidth={1.7} aria-hidden="true" />}
                     label="Availability"
                     value={siteConfig.contact.availability}
                   />
-                  <ContactRow
-                    icon={<MapPin size={16} strokeWidth={1.7} aria-hidden="true" />}
-                    label="Location"
-                    value={siteConfig.contact.location}
-                  />
+                  {siteConfig.contact.location ? (
+                    <ContactRow
+                      icon={<MapPin size={16} strokeWidth={1.7} aria-hidden="true" />}
+                      label="Location"
+                      value={siteConfig.contact.location}
+                    />
+                  ) : null}
                 </dl>
 
-                <p className="mt-4 text-xs text-fg-faint">
-                  Contact details are placeholders until the live ones are
-                  confirmed — update them in{" "}
-                  <code className="rounded bg-white/[0.05] px-1.5 py-0.5 font-mono text-[0.6875rem] text-fg-muted">
-                    lib/constants/site.ts
-                  </code>
-                  .
-                </p>
-
-                <div className="mt-8">
-                  <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-fg-faint">
-                    Elsewhere
-                  </p>
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {socialLinks.map((social) => (
-                      <li key={social.label}>
-                        <a
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-sm text-fg-muted transition-colors hover:border-line-strong hover:text-fg"
-                        >
-                          <SocialIcon name={social.icon} size={15} />
-                          {social.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {socialLinks.length > 0 ? (
+                  <div className="mt-8">
+                    <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-fg-faint">
+                      Elsewhere
+                    </p>
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {socialLinks.map((social) => (
+                        <li key={social.label}>
+                          <a
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-lg border border-line px-3.5 py-2 text-sm text-fg-muted transition-colors hover:border-line-strong hover:text-fg"
+                          >
+                            <SocialIcon name={social.icon} size={15} />
+                            {social.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </Reveal>
             </div>
 

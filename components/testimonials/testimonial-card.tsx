@@ -1,16 +1,9 @@
 import { Quote } from "lucide-react";
 
-import { Badge } from "@/components/ui/badge";
 import type { Testimonial } from "@/lib/constants/testimonials";
 import { cn } from "@/lib/utils/cn";
 
-/**
- * Reusable testimonial card.
- *
- * While `isPlaceholder` is true the card carries a visible marker, so
- * illustrative copy can never be mistaken for a verified client quote. Setting
- * the flag to false on a real, approved testimonial removes it.
- */
+/** Reusable testimonial card. Only ever renders real, approved quotes. */
 export function TestimonialCard({
   testimonial,
   className,
@@ -49,12 +42,6 @@ export function TestimonialCard({
             {testimonial.role}, {testimonial.company}
           </p>
         </div>
-
-        {testimonial.isPlaceholder ? (
-          <Badge variant="warn" className="ml-auto shrink-0">
-            Placeholder
-          </Badge>
-        ) : null}
       </figcaption>
     </figure>
   );

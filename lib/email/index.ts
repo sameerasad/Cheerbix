@@ -118,7 +118,6 @@ function renderEnquiry(input: ContactInput): string {
     `Email:     ${input.email}${isFreeEmailDomain(input.email) ? "  (personal domain)" : ""}`,
     `Company:   ${input.company?.trim() || "—"}`,
     `Service:   ${input.service}`,
-    `Budget:    ${input.budget}`,
     `Timeline:  ${input.timeline || "—"}`,
     "",
     "Project details",

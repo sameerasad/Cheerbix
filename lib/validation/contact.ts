@@ -17,15 +17,6 @@ export const SERVICE_OPTIONS = [
   "Other",
 ] as const;
 
-export const BUDGET_OPTIONS = [
-  "Under $2,000",
-  "$2,000–$5,000",
-  "$5,000–$10,000",
-  "$10,000–$25,000",
-  "$25,000+",
-  "Not sure yet",
-] as const;
-
 export const TIMELINE_OPTIONS = [
   "As soon as possible",
   "Within 1 month",
@@ -65,9 +56,6 @@ export const contactSchema = z.object({
     .or(z.literal("")),
   service: z.enum(SERVICE_OPTIONS, {
     message: "Please choose the service you need.",
-  }),
-  budget: z.enum(BUDGET_OPTIONS, {
-    message: "Please choose an approximate budget.",
   }),
   timeline: z
     .enum(TIMELINE_OPTIONS)

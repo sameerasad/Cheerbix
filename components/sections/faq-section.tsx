@@ -26,8 +26,10 @@ export function FAQSection({
   title = "Questions we're usually asked first",
   description = "If something here is not covered, ask us directly — we would rather answer it before you commit to anything.",
 }: FAQSectionProps) {
+  // The hairline keeps this distinct from a preceding panel section — on the
+  // home page it follows Technology directly.
   return (
-    <Section tone="panel">
+    <Section tone="panel" className="border-t border-line">
       <Container>
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-4">

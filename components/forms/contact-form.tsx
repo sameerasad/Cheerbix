@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { trackEvent } from "@/lib/analytics/events";
 import {
-  BUDGET_OPTIONS,
   SERVICE_OPTIONS,
   TIMELINE_OPTIONS,
   contactSchema,
@@ -23,7 +22,6 @@ const emptyForm: ContactInput = {
   email: "",
   company: "",
   service: SERVICE_OPTIONS[0],
-  budget: BUDGET_OPTIONS[0],
   timeline: "",
   message: "",
   website: "",
@@ -35,7 +33,6 @@ export function ContactForm() {
     email: "",
     company: "",
     service: "",
-    budget: "",
     timeline: "",
     message: "",
     website: "",
@@ -101,11 +98,8 @@ export function ContactForm() {
       }
 
       setStatus("success");
-      setValues({ ...emptyForm, service: "", budget: "" });
-      trackEvent("contact_form_submitted", {
-        service: parsed.data.service,
-        budget: parsed.data.budget,
-      });
+      setValues({ ...emptyForm, service: "" });
+      trackEvent("contact_form_submitted", { service: parsed.data.service });
     } catch {
       setStatus("error");
       setFormError(
@@ -186,29 +180,17 @@ export function ContactForm() {
         />
 
         <SelectField
-          id="budget"
-          label="Budget range"
-          placeholder="Select a range"
-          options={BUDGET_OPTIONS}
-          value={values.budget}
-          error={errors.budget}
-          hint="An approximate range is enough — it helps us scope realistically."
+          id="timeline"
+          label="Timeline"
+          optional
+          placeholder="Select a timeline"
+          options={TIMELINE_OPTIONS}
+          value={values.timeline}
+          error={errors.timeline}
           disabled={isSubmitting}
-          onChange={(event) => update("budget", event.target.value)}
+          onChange={(event) => update("timeline", event.target.value)}
         />
       </div>
-
-      <SelectField
-        id="timeline"
-        label="Timeline"
-        optional
-        placeholder="Select a timeline"
-        options={TIMELINE_OPTIONS}
-        value={values.timeline}
-        error={errors.timeline}
-        disabled={isSubmitting}
-        onChange={(event) => update("timeline", event.target.value)}
-      />
 
       <TextAreaField
         id="message"

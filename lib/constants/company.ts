@@ -237,16 +237,6 @@ export const credibilityPoints: {
   },
 ];
 
-/** Placeholder client logo slots — swap for real marks once permission exists. */
-export const clientLogoSlots = [
-  "Client logo",
-  "Client logo",
-  "Client logo",
-  "Client logo",
-  "Client logo",
-  "Client logo",
-];
-
 /* -------------------------------------------------------------------------- */
 /* Digital growth journey                                                      */
 /* -------------------------------------------------------------------------- */

@@ -1,14 +1,13 @@
 import { Container } from "@/components/layout/container";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/animated";
 import { Icon } from "@/components/ui/icon";
-import { clientLogoSlots, credibilityPoints } from "@/lib/constants/company";
+import { credibilityPoints } from "@/lib/constants/company";
 
 /**
  * The credibility strip directly beneath the hero.
  *
- * Everything here is qualitative on purpose. No project counts, no client
- * names and no percentages appear until there are verified ones to publish —
- * the logo row is explicitly labelled as awaiting client permission.
+ * Everything here is qualitative on purpose: no project counts, no client
+ * names and no percentages appear until there are verified ones to publish.
  */
 export function TrustStrip() {
   return (
@@ -46,27 +45,6 @@ export function TrustStrip() {
             </StaggerItem>
           ))}
         </StaggerGroup>
-
-        {/* Client logo row — placeholders until marks are cleared for use. */}
-        <div className="mt-12 border-t border-line pt-8">
-          <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-fg-faint">
-            Client logos
-            <span className="ml-2 font-normal normal-case tracking-normal text-fg-faint/70">
-              — placeholders, pending permission to display
-            </span>
-          </p>
-
-          <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-            {clientLogoSlots.map((slot, index) => (
-              <li
-                key={index}
-                className="flex h-14 items-center justify-center rounded-lg border border-dashed border-line-strong/60 text-xs text-fg-faint/70"
-              >
-                {slot}
-              </li>
-            ))}
-          </ul>
-        </div>
       </Container>
     </section>
   );

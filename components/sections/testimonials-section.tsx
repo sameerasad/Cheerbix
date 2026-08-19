@@ -5,8 +5,13 @@ import { StaggerGroup, StaggerItem } from "@/components/ui/animated";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { testimonials } from "@/lib/constants/testimonials";
 
+/**
+ * Renders nothing until there are real testimonials to show — an empty
+ * section, or one filled with invented quotes, is worse than no section.
+ * Adding an entry to `lib/constants/testimonials.ts` brings it back.
+ */
 export function TestimonialsSection() {
-  const hasPlaceholders = testimonials.some((item) => item.isPlaceholder);
+  if (testimonials.length === 0) return null;
 
   return (
     <Section tone="line">
@@ -14,11 +19,6 @@ export function TestimonialsSection() {
         <SectionHeading
           eyebrow="Client feedback"
           title="What working with Cherbix is like"
-          description={
-            hasPlaceholders
-              ? "The quotes below are illustrative placeholders, marked as such, and will be replaced with approved client testimonials."
-              : undefined
-          }
         />
 
         <StaggerGroup

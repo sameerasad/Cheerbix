@@ -11,8 +11,8 @@ Motion.
 
 ## ⚠️ Before you launch — two things
 
-1. **Replace the placeholder content.** Contact details, client logo slots,
-   testimonials and case studies are all clearly marked placeholders. See
+1. **Fill in what is deliberately empty.** Contact phone/location, social
+   links and testimonials are empty rather than faked. See
    [Placeholder content](#placeholder-content) below.
 2. **Set the environment variables.** Copy `.env.example` to `.env.local` and
    fill in what applies. See [Environment](#environment).
@@ -122,17 +122,37 @@ Everything illustrative is **marked in the UI**, so nothing can be mistaken for
 a verified claim. Nothing on this site invents a client name, a project count,
 a percentage or an award.
 
-| What                     | Where                        | How it is marked                              | To publish for real                        |
-| ------------------------ | ---------------------------- | --------------------------------------------- | ------------------------------------------ |
-| Case studies             | `lib/constants/projects.ts`  | "Demo case study" badge + a banner on `/work`  | Set `isDemo: false`                        |
-| Testimonials             | `lib/constants/testimonials.ts` | "Placeholder" badge on each card            | Set `isPlaceholder: false`                 |
-| Client logos             | `lib/constants/company.ts`   | Dashed slots labelled "pending permission"     | Replace `clientLogoSlots`                  |
-| Contact details          | `lib/constants/site.ts`      | Note on the contact page                       | Replace `siteConfig.contact`               |
-| Social links             | `lib/constants/site.ts`      | Point at platform home pages                   | Replace `socialLinks` hrefs                |
-| Privacy / Terms          | `app/privacy`, `app/terms`   | Review note at the foot of each page           | Have reviewed by a qualified adviser       |
+### What is still illustrative
 
-Case-study outcomes are written qualitatively on purpose. Publish numbers only
-once they have been measured and cleared by the client.
+| What         | Where                       | How it is marked                              |
+| ------------ | --------------------------- | --------------------------------------------- |
+| Case studies | `lib/constants/projects.ts` | "Demo case study" badge + a banner on `/work`  |
+
+Set `isDemo: false` on an entry once it describes a real, cleared project and
+the badge disappears. Outcomes are written qualitatively on purpose — publish
+numbers only once they have been measured and approved by the client.
+
+### What is empty rather than faked
+
+Nothing below renders while it has no real content, so no dummy data reaches a
+visitor. Filling any of these in makes the corresponding UI reappear on its own.
+
+| What            | Where                           | Behaviour while empty                     |
+| --------------- | ------------------------------- | ----------------------------------------- |
+| Testimonials    | `lib/constants/testimonials.ts` | The whole section is removed from the page |
+| Social links    | `lib/constants/site.ts`         | Footer and contact social blocks hidden    |
+| Phone, location | `lib/constants/site.ts`         | Those rows are omitted from footer/contact |
+| Founding year   | `lib/constants/site.ts`         | `foundingDate` left out of structured data |
+
+Client logo slots and placeholder testimonials were removed outright — an
+agency site is better with no social-proof section than with an invented one.
+
+### Still needs your input
+
+- **Contact details** — `siteConfig.contact` has email and availability; add
+  `phone` and `location` when confirmed.
+- **Privacy / Terms** — both carry a review note; have them checked by a
+  qualified adviser for your jurisdiction.
 
 ---
 

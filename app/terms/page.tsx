@@ -44,7 +44,6 @@ const sections: LegalSection[] = [
     heading: "Case studies and illustrative content",
     paragraphs: [
       "Case studies marked as demonstrations are fictional and illustrative. They describe how we approach work, not projects delivered for the named organisations, and nothing in them should be read as a representation about a real client or a measured business result.",
-      "Testimonials marked as placeholders are similarly illustrative and are not attributed to real people.",
     ],
   },
   {

@@ -9,7 +9,3 @@ const dateFormatter = new Intl.DateTimeFormat("en-GB", {
 export function formatDate(iso: string): string {
   return dateFormatter.format(new Date(iso));
 }
-
-export function yearsSince(year: number): number {
-  return Math.max(1, new Date().getUTCFullYear() - year);
-}

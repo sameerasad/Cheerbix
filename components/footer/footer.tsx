@@ -39,24 +39,28 @@ export function Footer() {
                   {siteConfig.contact.email}
                 </a>
               </li>
-              <li>
-                <a
-                  href={`tel:${siteConfig.contact.phone.replace(/[^+\d]/g, "")}`}
-                  className="inline-flex items-center gap-2.5 text-fg-muted transition-colors hover:text-fg"
-                >
-                  <Phone size={15} strokeWidth={1.7} aria-hidden="true" />
-                  {siteConfig.contact.phone}
-                </a>
-              </li>
-              <li className="inline-flex items-start gap-2.5 text-fg-muted">
-                <MapPin
-                  size={15}
-                  strokeWidth={1.7}
-                  aria-hidden="true"
-                  className="mt-0.5 shrink-0"
-                />
-                {siteConfig.contact.location}
-              </li>
+              {siteConfig.contact.phone ? (
+                <li>
+                  <a
+                    href={`tel:${siteConfig.contact.phone.replace(/[^+\d]/g, "")}`}
+                    className="inline-flex items-center gap-2.5 text-fg-muted transition-colors hover:text-fg"
+                  >
+                    <Phone size={15} strokeWidth={1.7} aria-hidden="true" />
+                    {siteConfig.contact.phone}
+                  </a>
+                </li>
+              ) : null}
+              {siteConfig.contact.location ? (
+                <li className="inline-flex items-start gap-2.5 text-fg-muted">
+                  <MapPin
+                    size={15}
+                    strokeWidth={1.7}
+                    aria-hidden="true"
+                    className="mt-0.5 shrink-0"
+                  />
+                  {siteConfig.contact.location}
+                </li>
+              ) : null}
             </ul>
           </div>
 
@@ -93,21 +97,23 @@ export function Footer() {
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
 
-          <ul className="flex items-center gap-1.5">
-            {socialLinks.map((social) => (
-              <li key={social.label}>
-                <a
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${siteConfig.name} on ${social.label}`}
-                  className="grid size-10 place-items-center rounded-lg text-fg-faint ring-1 ring-inset ring-transparent transition-all hover:bg-white/[0.05] hover:text-fg hover:ring-line"
-                >
-                  <SocialIcon name={social.icon} size={17} />
-                </a>
-              </li>
-            ))}
-          </ul>
+          {socialLinks.length > 0 ? (
+            <ul className="flex items-center gap-1.5">
+              {socialLinks.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${siteConfig.name} on ${social.label}`}
+                    className="grid size-10 place-items-center rounded-lg text-fg-faint ring-1 ring-inset ring-transparent transition-all hover:bg-white/[0.05] hover:text-fg hover:ring-line"
+                  >
+                    <SocialIcon name={social.icon} size={17} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </Container>
     </footer>

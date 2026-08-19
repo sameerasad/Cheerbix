@@ -30,7 +30,7 @@ const sections: LegalSection[] = [
       "We collect only what we need to respond to you and to understand how the site is used.",
     ],
     bullets: [
-      "Information you submit through the contact form: name, email address, company, the service and budget range you select, an optional timeline, and the project details you write.",
+      "Information you submit through the contact form: name, email address, company, the service you select, an optional timeline, and the project details you write.",
       "Information you send us directly by email or phone.",
       "Usage data collected by analytics, where enabled — pages viewed, approximate location derived from IP, device and browser type, and referring source.",
       "Technical data required to serve the site securely, such as IP address in server logs.",

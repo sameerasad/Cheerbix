@@ -85,7 +85,9 @@ export function organizationSchema() {
     logo: `${siteConfig.url}/brand/cherbix-logo.png`,
     image: `${siteConfig.url}/opengraph-image`,
     email: siteConfig.contact.email,
-    foundingDate: String(siteConfig.foundedYear),
+    ...(siteConfig.foundedYear
+      ? { foundingDate: String(siteConfig.foundedYear) }
+      : {}),
     areaServed: "Worldwide",
     knowsAbout: [
       "Web Development",
