@@ -14,7 +14,7 @@ const variants = {
   brand: "bg-brand-500/12 text-brand-200 ring-brand-500/25",
   aqua: "bg-aqua-500/12 text-aqua-300 ring-aqua-500/25",
   mint: "bg-mint-400/12 text-mint-400 ring-mint-400/25",
-  /** Used for the "demo case study" disclosure marker. */
+  /** Reserved for advisory or caution states. */
   warn: "bg-amber-400/10 text-amber-300/90 ring-amber-400/25",
 } as const;
 
@@ -43,21 +43,3 @@ export function Badge({
   );
 }
 
-/**
- * Explicit disclosure marker for illustrative content. Used on the demo case
- * studies so nothing on the site can be mistaken for a verified client result.
- */
-export function DemoBadge({
-  children = "Demo case study",
-  className,
-}: {
-  children?: ReactNode;
-  className?: string;
-}) {
-  return (
-    <Badge variant="warn" className={className}>
-      <span aria-hidden="true" className="size-1.5 rounded-full bg-current" />
-      {children}
-    </Badge>
-  );
-}

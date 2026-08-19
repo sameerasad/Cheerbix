@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Info } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -8,7 +8,6 @@ import { Section } from "@/components/layout/section";
 import { PortfolioCard } from "@/components/portfolio/portfolio-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/animated";
-import { DemoBadge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AbstractCover, GridBackdrop } from "@/components/ui/decor";
 import { JsonLd } from "@/components/ui/json-ld";
@@ -30,8 +29,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!project) {
     return buildMetadata({
-      title: "Case study not found",
-      description: "This case study could not be found.",
+      title: "Project not found",
+      description: "This project could not be found.",
       path: `/work/${slug}`,
       noIndex: true,
     });
@@ -73,15 +72,16 @@ export default async function CaseStudyPage({ params }: PageProps) {
               className="inline-flex items-center gap-2 text-[0.8125rem] text-fg-faint transition-colors hover:text-fg"
             >
               <ArrowLeft size={14} aria-hidden="true" />
-              All case studies
+              All work
             </Link>
           </nav>
 
           <Reveal>
-            <div className="flex flex-wrap items-center gap-3">
-              <Eyebrow>{project.category}</Eyebrow>
-              {project.isDemo ? <DemoBadge /> : null}
-            </div>
+            <Eyebrow>
+              {project.kind === "concept"
+                ? `${project.category} · Concept build`
+                : project.category}
+            </Eyebrow>
 
             <h1 className="mt-6 max-w-3xl text-[2.15rem] font-semibold leading-[1.06] tracking-tightest text-fg sm:text-5xl lg:text-[3.5rem]">
               {project.name}
@@ -95,7 +95,14 @@ export default async function CaseStudyPage({ params }: PageProps) {
           {/* Fact row */}
           <Reveal delay={0.08}>
             <dl className="mt-12 grid gap-px overflow-hidden rounded-xl bg-line sm:grid-cols-2 lg:grid-cols-4">
-              <Fact label="Client" value={project.client} />
+              <Fact
+                label={project.kind === "concept" ? "Type" : "Client"}
+                value={
+                  project.kind === "concept"
+                    ? "Cherbix reference build"
+                    : (project.client ?? "—")
+                }
+              />
               <Fact label="Year" value={project.year} />
               <Fact label="Services" value={project.services.join(", ")} />
               <Fact label="Stack" value={project.technologies.join(", ")} />
@@ -192,7 +199,9 @@ export default async function CaseStudyPage({ params }: PageProps) {
               <Reveal>
                 <Eyebrow>Solution</Eyebrow>
                 <h2 className="mt-6 text-[1.6rem] font-semibold leading-tight tracking-tightest text-fg sm:text-3xl">
-                  What we delivered
+                  {project.kind === "concept"
+                    ? "What the build contains"
+                    : "What we delivered"}
                 </h2>
               </Reveal>
             </div>
@@ -214,13 +223,15 @@ export default async function CaseStudyPage({ params }: PageProps) {
         </Container>
       </Section>
 
-      {/* Outcomes */}
+      {/* Highlights */}
       <Section tone="panel">
         <Container>
           <Reveal>
-            <Eyebrow>Outcome</Eyebrow>
+            <Eyebrow>{project.kind === "concept" ? "Highlights" : "Outcome"}</Eyebrow>
             <h2 className="mt-6 max-w-2xl text-[1.6rem] font-semibold leading-tight tracking-tightest text-fg sm:text-3xl">
-              What the project changed
+              {project.kind === "concept"
+                ? "What the build demonstrates"
+                : "What the project changed"}
             </h2>
           </Reveal>
 
@@ -228,28 +239,18 @@ export default async function CaseStudyPage({ params }: PageProps) {
             as="dl"
             className="mt-12 grid gap-px overflow-hidden rounded-xl bg-line sm:grid-cols-2 lg:grid-cols-4"
           >
-            {project.outcomes.map((outcome) => (
-              <StaggerItem key={outcome.label} className="bg-ink-900 p-6 sm:p-7">
+            {project.highlights.map((highlight) => (
+              <StaggerItem key={highlight.label} className="bg-ink-900 p-6 sm:p-7">
                 <dt className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-fg-faint">
-                  {outcome.label}
+                  {highlight.label}
                 </dt>
                 <dd className="mt-3 text-[0.9375rem] leading-snug text-fg">
-                  {outcome.value}
+                  {highlight.value}
                 </dd>
               </StaggerItem>
             ))}
           </StaggerGroup>
 
-          {project.isDemo ? (
-            <Reveal>
-              <p className="mt-8 flex items-start gap-3 text-sm leading-relaxed text-fg-faint">
-                <Info size={15} aria-hidden="true" className="mt-0.5 shrink-0" />
-                Outcomes are described qualitatively because this is a
-                demonstration case study. We do not publish numeric results
-                unless they have been measured and cleared by the client.
-              </p>
-            </Reveal>
-          ) : null}
         </Container>
       </Section>
 
@@ -259,7 +260,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <Container>
             <div className="flex items-end justify-between gap-6">
               <h2 className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-fg-faint">
-                More case studies
+                More builds
               </h2>
               <Button href="/work" variant="ghost" size="sm">
                 View all
@@ -283,7 +284,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
       ) : null}
 
       <CTASection
-        title="Have a project like this?"
+        title="Need something like this built?"
         description="Tell us where you are now and what you need it to do. We'll come back with a practical plan."
         primary={{ label: "Start a Project", href: "/contact" }}
         secondary={{ label: "Explore services", href: "/services" }}

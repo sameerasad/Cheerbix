@@ -96,7 +96,7 @@ lib/
 | `nav.ts`           | Primary navigation and footer columns                |
 | `services.ts`      | All seven services incl. full service-page content   |
 | `solutions.ts`     | Outcome-led engagements and industries               |
-| `projects.ts`      | Portfolio case studies                               |
+| `projects.ts`      | Concept builds and client case studies               |
 | `posts.ts`         | Blog articles as typed content blocks                |
 | `company.ts`       | Process, differentiators, values, mission, growth journey |
 | `technologies.ts`  | The stack, grouped by layer                          |
@@ -122,15 +122,25 @@ Everything illustrative is **marked in the UI**, so nothing can be mistaken for
 a verified claim. Nothing on this site invents a client name, a project count,
 a percentage or an award.
 
-### What is still illustrative
+### Concept builds vs client work
 
-| What         | Where                       | How it is marked                              |
-| ------------ | --------------------------- | --------------------------------------------- |
-| Case studies | `lib/constants/projects.ts` | "Demo case study" badge + a banner on `/work`  |
+`/work` currently shows **concept builds** — reference products Cherbix
+developed itself to work through a class of problem. No client is named or
+implied. They carry a quiet "Concept" marker in the category chip and read as
+"Cherbix reference build" in the fact row.
 
-Set `isDemo: false` on an entry once it describes a real, cleared project and
-the badge disappears. Outcomes are written qualitatively on purpose — publish
-numbers only once they have been measured and approved by the client.
+`lib/constants/projects.ts` supports both kinds:
+
+```ts
+kind: "concept"                    // our own reference build
+kind: "client", client: "Acme Ltd" // real delivered work
+```
+
+Switching an entry to `"client"` changes the labels, swaps "What the build
+contains" to "What we delivered" and shows the client row. **Only do that for
+work actually delivered and cleared for publication.** Highlights are written
+qualitatively on purpose — publish numbers only once they have been measured
+and approved by the client.
 
 ### What is empty rather than faked
 

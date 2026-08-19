@@ -1,4 +1,3 @@
-import { Info } from "lucide-react";
 import type { Metadata } from "next";
 
 import { Container } from "@/components/layout/container";
@@ -6,7 +5,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Section } from "@/components/layout/section";
 import { PortfolioCard } from "@/components/portfolio/portfolio-card";
 import { CTASection } from "@/components/sections/cta-section";
-import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/animated";
+import { StaggerGroup, StaggerItem } from "@/components/ui/animated";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/ui/json-ld";
 import { projectCategories, projects } from "@/lib/constants/projects";
@@ -15,7 +14,7 @@ import { breadcrumbSchema, buildMetadata } from "@/lib/utils/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Work",
   description:
-    "Case studies showing how Cherbix scopes, designs, builds and hands over digital products across FinTech, healthcare, commerce, SaaS and logistics.",
+    "Reference builds showing how Cherbix approaches FinTech platforms, healthcare apps, B2B commerce, SaaS dashboards, AI automation and field service software.",
   path: "/work",
 });
 
@@ -23,8 +22,6 @@ export const metadata: Metadata = buildMetadata({
 const coverVariants = ["orbit", "grid", "wave"] as const;
 
 export default function WorkPage() {
-  const allAreDemos = projects.every((project) => project.isDemo);
-
   return (
     <>
       <JsonLd
@@ -35,9 +32,9 @@ export default function WorkPage() {
       />
 
       <PageHero
-        eyebrow="Selected work"
-        title="Ideas we've turned into digital experiences."
-        description="Each case study covers the actual problem, the decisions we made, and what the client walked away owning."
+        eyebrow="Concept builds"
+        title="Builds that show how we work."
+        description="Reference builds we develop ourselves to work through a class of product properly — the real constraints, the decisions they force, and what the finished thing contains."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Work", href: "/work" },
@@ -58,28 +55,6 @@ export default function WorkPage() {
 
       <Section>
         <Container>
-          {allAreDemos ? (
-            <Reveal>
-              <div className="mb-12 flex items-start gap-3.5 rounded-xl border border-amber-400/20 bg-amber-400/[0.04] p-5">
-                <Info
-                  size={17}
-                  aria-hidden="true"
-                  className="mt-0.5 shrink-0 text-amber-300/90"
-                />
-                <p className="text-sm leading-relaxed text-fg-muted">
-                  <span className="font-medium text-fg">
-                    These are demonstration case studies.
-                  </span>{" "}
-                  Every project below is fictional and illustrative — written to
-                  show how we scope and document real work. No entry represents
-                  an actual client, and none of the outcomes listed are measured
-                  business results. Real case studies will replace them as
-                  clients approve publication.
-                </p>
-              </div>
-            </Reveal>
-          ) : null}
-
           {projects.length === 0 ? (
             <EmptyWork />
           ) : (
@@ -108,8 +83,8 @@ export default function WorkPage() {
       </Section>
 
       <CTASection
-        title="Your project could be the next one here."
-        description="Tell us what you're building. We'll tell you honestly whether we're the right team for it."
+        title="Bring us the real one."
+        description="These are our own builds. Tell us what you're actually trying to ship and we'll tell you honestly whether we're the right team for it."
         primary={{ label: "Start a Project", href: "/contact" }}
         secondary={{ label: "Explore services", href: "/services" }}
       />
@@ -121,10 +96,10 @@ export default function WorkPage() {
 function EmptyWork() {
   return (
     <div className="rounded-2xl border border-dashed border-line-strong px-6 py-20 text-center">
-      <h2 className="text-lg font-medium text-fg">No case studies published yet</h2>
+      <h2 className="text-lg font-medium text-fg">Nothing published yet</h2>
       <p className="mx-auto mt-3 max-w-md text-[0.9375rem] leading-relaxed text-fg-muted">
-        We&apos;re preparing write-ups of recent projects. In the meantime, the
-        services pages cover how we approach each type of work.
+        We&apos;re preparing write-ups. In the meantime, the services pages cover
+        how we approach each type of work.
       </p>
       <div className="mt-8 flex flex-wrap justify-center gap-3">
         <Button href="/services" variant="secondary">

@@ -41,9 +41,9 @@ const sections: LegalSection[] = [
     ],
   },
   {
-    heading: "Case studies and illustrative content",
+    heading: "Concept builds",
     paragraphs: [
-      "Case studies marked as demonstrations are fictional and illustrative. They describe how we approach work, not projects delivered for the named organisations, and nothing in them should be read as a representation about a real client or a measured business result.",
+      "Projects marked as concept builds are reference products developed by Cherbix itself. They are shown to demonstrate how we approach a class of problem. They do not represent work delivered for a client, and nothing in them should be read as a claim about a specific customer or a measured business result.",
     ],
   },
   {

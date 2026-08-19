@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { featuredProjects } from "@/lib/constants/projects";
 
 /**
- * Featured work in an asymmetric arrangement — one lead case study beside a
+ * Featured work in an asymmetric arrangement — one lead build beside a
  * stacked pair — rather than three equal columns.
  */
 export function FeaturedWork() {
@@ -19,12 +19,12 @@ export function FeaturedWork() {
     <Section id="work" tone="line">
       <Container>
         <SectionHeading
-          eyebrow="Selected work"
+          eyebrow="Concept builds"
           title="Ideas we've turned into digital experiences"
-          description="Illustrative case studies showing how we scope, build and hand over. Every project below is clearly marked as a demonstration."
+          description="Reference builds we develop ourselves to work through a class of product properly — the constraints, the decisions they force, and what the finished thing contains."
           action={
             <Button href="/work" variant="outline">
-              All case studies
+              See all builds
               <ArrowRight size={16} aria-hidden="true" />
             </Button>
           }

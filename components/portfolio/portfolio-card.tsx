@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-import { DemoBadge } from "@/components/ui/badge";
 import { AbstractCover } from "@/components/ui/decor";
 import type { Project } from "@/lib/constants/projects";
 import { cn } from "@/lib/utils/cn";
@@ -47,14 +46,18 @@ export function PortfolioCard({
             />
           </div>
 
-          {project.isDemo ? (
-            <div className="absolute left-4 top-4">
-              <DemoBadge />
-            </div>
-          ) : null}
-
-          <span className="absolute bottom-4 left-4 rounded-full bg-ink-950/70 px-2.5 py-1 text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-fg-muted backdrop-blur-sm">
+          {/* Concept builds are marked inside the category chip rather than
+              with a separate badge — accurate, without shouting. */}
+          <span className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full bg-ink-950/70 px-2.5 py-1 text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-fg-muted backdrop-blur-sm">
             {project.category}
+            {project.kind === "concept" ? (
+              <>
+                <span aria-hidden="true" className="text-fg-faint/60">
+                  ·
+                </span>
+                <span className="text-aqua-300/90">Concept</span>
+              </>
+            ) : null}
           </span>
         </div>
 
@@ -104,7 +107,7 @@ export function PortfolioCard({
           ) : null}
 
           <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-fg-muted transition-colors group-hover:text-fg">
-            View case study
+            {project.kind === "concept" ? "View the build" : "View case study"}
           </span>
         </div>
       </Link>
