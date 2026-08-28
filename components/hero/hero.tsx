@@ -8,13 +8,13 @@ import { GridBackdrop } from "@/components/ui/decor";
 import { Eyebrow } from "@/components/ui/section-heading";
 
 const capabilities = [
+  "Custom Software",
+  "ERP",
   "Web",
   "Mobile",
-  "UI/UX",
-  "AI automation",
-  "Marketing",
-  "SEO",
-  "Content",
+  "AI & Automation",
+  "Cloud",
+  "Digital Growth",
 ];
 
 export function Hero() {
@@ -33,21 +33,21 @@ export function Hero() {
           {/* Copy */}
           <div className="lg:col-span-7 lg:pr-8">
             <Reveal>
-              <Eyebrow>Digital solutions for modern businesses</Eyebrow>
+              <Eyebrow>Software engineering for modern businesses</Eyebrow>
             </Reveal>
 
             <Reveal delay={0.06}>
               <h1 className="mt-7 max-w-[19ch] text-[2.6rem] font-semibold leading-[1.04] tracking-tightest text-fg sm:text-6xl lg:text-[4.15rem]">
-                We build digital experiences that{" "}
-                <span className="text-gradient">move businesses forward.</span>
+                We build software that{" "}
+                <span className="text-gradient">moves businesses forward.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-fg-muted sm:text-lg">
-                From websites and mobile apps to AI automation, SEO, marketing
-                and content — we help businesses build, launch, and grow
-                digitally.
+                From custom applications and ERP systems to AI automation, web
+                and mobile platforms — we design, build and scale software
+                around your business.
               </p>
             </Reveal>
 

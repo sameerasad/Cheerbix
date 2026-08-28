@@ -34,9 +34,9 @@ export const siteConfig = {
   name: "Cherbix",
   legalName: "Cherbix",
   /** Used in <title> templates and structured data. */
-  tagline: "Digital Solutions That Move Businesses Forward",
+  tagline: "Software That Moves Businesses Forward",
   description:
-    "Cherbix builds websites, mobile apps, AI automation solutions, and digital growth strategies that help businesses build, launch, and grow.",
+    "Cherbix builds custom software, ERP and business systems, web and mobile applications, and AI automation — designed, built and scaled around how your business actually works.",
   /** Set NEXT_PUBLIC_SITE_URL in production; the fallback keeps dev builds valid. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://cherbix.com",
   locale: "en_US",

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/hero/hero";
 import { AIHighlight } from "@/components/sections/ai-highlight";
 import { CTASection } from "@/components/sections/cta-section";
+import { EngineeringSection } from "@/components/sections/engineering-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FeaturedWork } from "@/components/sections/featured-work";
 import { GrowthSection } from "@/components/sections/growth-section";
@@ -26,6 +27,9 @@ export const metadata: Metadata = buildMetadata({
 /**
  * Home page section order follows the intended visitor journey:
  * understand → trust → explore → evaluate → contact.
+ *
+ * Software engineering leads; SEO, marketing and content are positioned after
+ * it as supporting capabilities rather than headline services.
  */
 export default function HomePage() {
   return (
@@ -39,8 +43,11 @@ export default function HomePage() {
       <FeaturedWork />
       <ProcessSection />
       <AIHighlight />
-      <GrowthSection />
       <TechSection />
+      <EngineeringSection />
+      {/* Growth sits after the engineering material: it supports the software
+          work rather than leading it. */}
+      <GrowthSection />
       <TestimonialsSection />
       <FAQSection items={generalFaqs} />
       <CTASection />

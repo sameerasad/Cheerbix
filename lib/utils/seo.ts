@@ -90,13 +90,17 @@ export function organizationSchema() {
       : {}),
     areaServed: "Worldwide",
     knowsAbout: [
+      "Custom Software Development",
+      "Enterprise Resource Planning",
       "Web Development",
       "Mobile App Development",
+      "Artificial Intelligence",
+      "Business Process Automation",
+      "System Integration",
       "UI/UX Design",
-      "AI Automation",
+      "Cloud Computing",
       "Digital Marketing",
       "Search Engine Optimization",
-      "Content Writing",
     ],
   };
 }

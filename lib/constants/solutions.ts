@@ -27,7 +27,7 @@ export const solutions: Solution[] = [
       "A scoped first release aimed at learning quickly — built on foundations that will not need replacing once the product finds its shape.",
     icon: "rocket",
     services: [
-      { label: "UI/UX Design", href: "/services/ui-ux-design" },
+      { label: "Custom Software", href: "/services/custom-software-development" },
       { label: "Web Development", href: "/services/web-development" },
       { label: "Mobile Apps", href: "/services/mobile-app-development" },
     ],
@@ -63,8 +63,8 @@ export const solutions: Solution[] = [
       "We measure the process first, automate the genuinely repeatable part, and keep the judgement with your team — with every action logged.",
     icon: "workflow",
     services: [
-      { label: "AI Automation", href: "/services/ai-automation" },
-      { label: "Web Development", href: "/services/web-development" },
+      { label: "AI & Automation", href: "/services/ai-automation" },
+      { label: "Custom Software", href: "/services/custom-software-development" },
     ],
     outcomes: [
       "A measured before-and-after, not an estimate",
@@ -98,9 +98,9 @@ export const solutions: Solution[] = [
       "Custom tools for the process that is specific to how you compete — with proper permissions, an audit trail and constraints a spreadsheet cannot enforce.",
     icon: "building",
     services: [
-      { label: "Web Development", href: "/services/web-development" },
-      { label: "UI/UX Design", href: "/services/ui-ux-design" },
-      { label: "AI Automation", href: "/services/ai-automation" },
+      { label: "Custom Software", href: "/services/custom-software-development" },
+      { label: "ERP & Business Systems", href: "/services/erp-business-systems" },
+      { label: "AI & Automation", href: "/services/ai-automation" },
     ],
     outcomes: [
       "Role-based access and a complete audit trail",

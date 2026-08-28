@@ -27,22 +27,22 @@ const nodes: Node[] = [
   { id: "web", label: "Web", x: 17, y: 24, accent: "aqua", size: 8.5 },
   { id: "mobile", label: "Mobile", x: 84, y: 27, accent: "brand", size: 8 },
   { id: "ai", label: "AI", x: 82, y: 74, accent: "mint", size: 9 },
-  { id: "growth", label: "Growth", x: 20, y: 79, accent: "aqua", size: 8 },
-  { id: "design", label: "Design", x: 50, y: 12, accent: "brand", size: 6.5 },
-  { id: "seo", label: "SEO", x: 50, y: 89, accent: "aqua", size: 6.5 },
+  { id: "cloud", label: "Cloud", x: 20, y: 79, accent: "aqua", size: 8 },
+  { id: "software", label: "Software", x: 50, y: 12, accent: "brand", size: 6.5 },
+  { id: "erp", label: "ERP", x: 50, y: 89, accent: "aqua", size: 6.5 },
 ];
 
 const links: [string, string][] = [
   ["core", "web"],
   ["core", "mobile"],
   ["core", "ai"],
-  ["core", "growth"],
-  ["core", "design"],
-  ["core", "seo"],
-  ["web", "design"],
-  ["ai", "growth"],
+  ["core", "cloud"],
+  ["core", "software"],
+  ["core", "erp"],
+  ["web", "software"],
+  ["ai", "cloud"],
   ["mobile", "ai"],
-  ["seo", "growth"],
+  ["erp", "cloud"],
 ];
 
 const accentColor = {

@@ -23,8 +23,8 @@ export function ServicesSection() {
       <Container>
         <SectionHeading
           eyebrow="Services"
-          title="Everything you need to grow digitally"
-          description="One technology partner for development, design, automation, marketing, content, and growth."
+          title="Technology capabilities from idea to scale"
+          description="Custom software, ERP and business systems, web and mobile platforms, AI and automation — with design and digital growth behind them."
           action={
             <Button href="/services" variant="outline" size="md">
               All services

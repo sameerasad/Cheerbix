@@ -95,7 +95,7 @@ export const differentiators: Differentiator[] = [
   {
     title: "One team",
     description:
-      "Development, design, automation, marketing, SEO and content under one partner — so nothing is lost in a handoff between three suppliers.",
+      "Software engineering, ERP, AI, automation, design and digital growth under one technology partner.",
     icon: "users",
   },
   {
@@ -302,4 +302,69 @@ export const aiCapabilities: string[] = [
   "Process documents and extract data",
   "Connect business systems end to end",
   "Improve operational efficiency",
+];
+
+/* -------------------------------------------------------------------------- */
+/* Security & engineering quality                                             */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Engineering practices, deliberately worded as practices rather than
+ * credentials. Cherbix holds no security certifications, so none are claimed
+ * here — if that changes, state the certification and its scope explicitly
+ * rather than implying it.
+ */
+export const engineeringPractices: {
+  title: string;
+  description: string;
+  icon: IconKey;
+}[] = [
+  {
+    title: "Secure development",
+    description:
+      "Input validation at every boundary, parameterised queries, secrets in environment variables, dependency advisories tracked and patched.",
+    icon: "shield",
+  },
+  {
+    title: "Code review",
+    description:
+      "Every change reviewed by a second engineer before it merges. No direct commits to a production branch.",
+    icon: "git-pull-request",
+  },
+  {
+    title: "QA & automated testing",
+    description:
+      "Automated tests around the logic that matters, plus manual verification across the browsers and devices your users actually run.",
+    icon: "test-tube",
+  },
+  {
+    title: "Authentication & permissions",
+    description:
+      "Role-based access enforced on the server, session handling that stands up to scrutiny, and least-privilege as the default.",
+    icon: "key",
+  },
+  {
+    title: "Backups & recovery",
+    description:
+      "Automated backups with a restore procedure that has actually been tested — an untested backup is a hope, not a plan.",
+    icon: "database-backup",
+  },
+  {
+    title: "Monitoring & alerting",
+    description:
+      "Error tracking, uptime checks and performance monitoring, so we hear about a problem before your customers report it.",
+    icon: "activity",
+  },
+  {
+    title: "CI/CD pipelines",
+    description:
+      "Every commit builds, type-checks, lints and tests automatically. Releases are routine and reversible rather than an event.",
+    icon: "workflow",
+  },
+  {
+    title: "Scalable architecture",
+    description:
+      "Stateless services, sensible caching and data models designed for the queries they will actually serve as volume grows.",
+    icon: "layers",
+  },
 ];
