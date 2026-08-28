@@ -1,8 +1,8 @@
 # Cherbix
 
-Production website for Cherbix — a digital solutions company covering web
-development, mobile apps, UI/UX design, AI automation, digital marketing, SEO
-and content writing.
+Production website for Cherbix — a software house covering custom software
+development, ERP and business systems, web and mobile applications, AI and
+automation, with UI/UX and digital growth behind them.
 
 Built with Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4 and
 Motion.
@@ -52,7 +52,7 @@ app/
   layout.tsx              Root layout, fonts, metadata, analytics, schema.org
   template.tsx            Page transition (opacity fade)
   page.tsx                Home
-  services/               Services index + [slug] (7 static service pages)
+  services/               Services index + [slug] (9 static service pages)
   solutions/              Outcome-led view of the same capabilities
   work/                   Portfolio index + [slug] case studies
   about/  blog/  contact/  faqs/  privacy/  terms/
@@ -94,11 +94,11 @@ lib/
 | ------------------ | ---------------------------------------------------- |
 | `site.ts`          | Brand name, contact details, social links, logo asset |
 | `nav.ts`           | Primary navigation and footer columns                |
-| `services.ts`      | All seven services incl. full service-page content   |
+| `services.ts`      | All nine services incl. full service-page content    |
 | `solutions.ts`     | Outcome-led engagements and industries               |
 | `projects.ts`      | Concept builds and client case studies               |
 | `posts.ts`         | Blog articles as typed content blocks                |
-| `company.ts`       | Process, differentiators, values, mission, growth journey |
+| `company.ts`       | Process, differentiators, values, mission, growth journey, engineering practices |
 | `technologies.ts`  | The stack, grouped by layer                          |
 | `testimonials.ts`  | Client quotes                                        |
 | `faqs.ts`          | General FAQ (service FAQs live with each service)    |

@@ -51,6 +51,62 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "enterprise-erp-platform",
+    name: "Enterprise ERP Platform",
+    category: "ERP & Business Systems",
+    kind: "concept",
+    excerpt:
+      "Inventory, purchasing, sales, finance, CRM and reporting on one connected record.",
+    intro:
+      "A reference build for the hardest integration problem most businesses have: getting stock, purchasing, sales, finance and customer history to agree with each other, with approvals and an audit trail built into the record rather than bolted on.",
+    year: "2025",
+    featured: true,
+    services: ["ERP & Business Systems", "Custom Software Development", "UI/UX Design"],
+    technologies: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Redis"],
+    palette: ["#0846c4", "#33d9f2"],
+    challenge:
+      "Operational software accumulates department by department. Stock lives in one system, invoices in another, customer history in a third, and the numbers the board sees are reassembled in a spreadsheet each month. Nobody fully trusts a figure until it has been checked against two other places.",
+    approach: [
+      {
+        title: "One record, many views",
+        description:
+          "Inventory, orders and invoices are built on a shared transactional core rather than separate modules that reconcile afterwards, so a movement posted once is correct everywhere.",
+      },
+      {
+        title: "Workflow encoded, not remembered",
+        description:
+          "Approval thresholds, credit limits and pricing rules live in the system as configuration, so authority can be delegated without depending on one person's inbox.",
+      },
+      {
+        title: "Auditability designed in",
+        description:
+          "Every transaction and master-data change records actor, timestamp and prior value. Retrofitting that onto a live finance system is far harder than designing it from the start.",
+      },
+      {
+        title: "Built to be adopted in phases",
+        description:
+          "Modules are separable, so a business can go live on inventory and purchasing while finance still runs on the existing system.",
+      },
+    ],
+    solution: [
+      "Multi-location inventory with batch and serial tracking, transfers, adjustments and stock takes.",
+      "Purchasing from requisition through approval, purchase order, goods receipt and invoice matching.",
+      "Sales orders and quotes with customer-specific contract pricing and credit control.",
+      "Invoicing and payment allocation, with an integration path to an existing accounting system.",
+      "CRM records linking every quote, order, invoice and conversation to one customer.",
+      "Configurable approval workflows with notifications and document generation.",
+      "Operational and management reporting — margin by product, customer and job — built on the live record rather than exported spreadsheets.",
+      "Configurable dashboards for the numbers each role needs to act on daily.",
+    ],
+    highlights: [
+      { label: "Data entry", value: "Captured once, correct everywhere" },
+      { label: "Approvals", value: "Enforced by the system, not by email" },
+      { label: "Audit trail", value: "Every transaction and master-data change" },
+      { label: "Rollout", value: "Module by module, not one cutover" },
+    ],
+  },
+
+  {
     slug: "fintech-lending-platform",
     name: "Lending Origination Platform",
     category: "FinTech Platform",
@@ -61,7 +117,7 @@ export const projects: Project[] = [
       "A reference build working through what a regulated financial product actually demands: an underwriting workflow that is auditable end to end, document handling that does not rely on re-keying, and an interface built around the decision rather than the database record.",
     year: "2025",
     featured: true,
-    services: ["Web Development", "UI/UX Design", "AI Automation"],
+    services: ["Web Development", "UI/UX Design", "AI & Automation"],
     technologies: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "AWS"],
     palette: ["#0b5cf5", "#12c2e9"],
     challenge:
@@ -166,7 +222,7 @@ export const projects: Project[] = [
     intro:
       "A reference build tackling the hardest part of B2B commerce: thousands of SKUs, account-specific contract pricing, and a category structure that has to serve search demand as well as it serves the internal product hierarchy.",
     year: "2024",
-    featured: true,
+    featured: false,
     services: ["Web Development", "SEO", "UI/UX Design"],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Vercel"],
     palette: ["#1e7bff", "#7bb0ff"],
@@ -273,7 +329,7 @@ export const projects: Project[] = [
       "A reference build showing how we scope automation: measure the process first, automate only the narrow repeatable part, and keep the judgement with people. Every automated action is logged, explainable and reversible.",
     year: "2025",
     featured: false,
-    services: ["AI Automation", "Web Development"],
+    services: ["AI & Automation", "Web Development"],
     technologies: ["Next.js", "Node.js", "Claude API", "PostgreSQL", "Vector search"],
     palette: ["#2bd9a0", "#12c2e9"],
     challenge:

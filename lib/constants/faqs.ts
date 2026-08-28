@@ -7,7 +7,7 @@ export const generalFaqs: FAQ[] = [
   {
     question: "What services does Cherbix provide?",
     answer:
-      "Web development, mobile app development, UI/UX design, AI automation, digital marketing, SEO and content writing — plus web design, custom business software and ongoing maintenance. Most engagements combine several of these, which is the point: one partner across build, launch and growth.",
+      "Cherbix provides custom software development, ERP and business systems, web and mobile application development, AI and automation, system integration, UI/UX, cloud solutions and digital growth services. Most engagements combine several of these, which is the point: one partner across build, launch and growth.",
   },
   {
     question: "How does the project process work?",

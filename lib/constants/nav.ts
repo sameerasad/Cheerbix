@@ -18,10 +18,12 @@ export const footerNav: { title: string; items: NavItem[] }[] = [
   {
     title: "Services",
     items: [
+      { label: "Custom Software", href: "/services/custom-software-development" },
+      { label: "ERP & Business Systems", href: "/services/erp-business-systems" },
       { label: "Web Development", href: "/services/web-development" },
       { label: "Mobile Apps", href: "/services/mobile-app-development" },
+      { label: "AI & Automation", href: "/services/ai-automation" },
       { label: "UI/UX Design", href: "/services/ui-ux-design" },
-      { label: "AI Automation", href: "/services/ai-automation" },
       { label: "Digital Marketing", href: "/services/digital-marketing" },
       { label: "SEO", href: "/services/seo" },
       { label: "Content Writing", href: "/services/content-writing" },

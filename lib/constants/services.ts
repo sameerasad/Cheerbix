@@ -12,7 +12,7 @@ export type Service = {
   tagline: string;
   /** Two-to-three lines, used on the services index. */
   summary: string;
-  /** Drives the accent treatment so the seven pages don't look identical. */
+  /** Drives the accent treatment so the service pages don't look identical. */
   accent: "brand" | "aqua" | "mint";
   hero: {
     eyebrow: string;
@@ -37,6 +37,324 @@ export type Service = {
 };
 
 export const services: Service[] = [
+  {
+    slug: "custom-software-development",
+    title: "Custom Software Development",
+    shortTitle: "Custom Software",
+    icon: "boxes",
+    accent: "brand",
+    tagline:
+      "Bespoke business applications, SaaS platforms and internal systems built around your operations.",
+    summary:
+      "Software written for the way your business actually works — SaaS products, internal platforms and line-of-business applications, engineered to be maintained for years rather than replaced in two.",
+    hero: {
+      eyebrow: "Custom Software Development",
+      heading: "Software built around your business, not the other way round.",
+      body: "When off-the-shelf software forces you to change how you operate, the process that differentiates you is the one being compromised. We build the system that fits the operation — properly engineered, documented, and owned by you.",
+    },
+    problem: {
+      heading: "The process that makes you competitive is the one nothing fits.",
+      body: "Most businesses can buy software for the generic parts — accounting, email, storage. The part that is specific to how you compete is the part every vendor gets almost right and no vendor gets right. So it ends up in spreadsheets, in workarounds, and in a handful of people's heads.",
+      symptoms: [
+        "A core process running on spreadsheets nobody is allowed to touch",
+        "Staff re-entering the same data into two or three different systems",
+        "Off-the-shelf software bent so far out of shape it needs a specialist",
+        "Reporting assembled by hand because no system holds the whole picture",
+        "Growth blocked by administrative load rather than by demand",
+      ],
+    },
+    solution: {
+      heading: "Build the part that is genuinely yours. Buy the rest.",
+      body: "We are deliberately conservative about what deserves custom software. The processes that differentiate you are worth building; everything else should be bought and integrated. That line, drawn honestly, is what keeps a custom build affordable.",
+      pillars: [
+        {
+          title: "Scoped to what differentiates you",
+          description:
+            "We map which parts of the process are genuinely specific and which are commodity, then build only the first and integrate the rest.",
+        },
+        {
+          title: "Engineered for the long run",
+          description:
+            "Typed code, automated tests, documented architecture and a real deployment pipeline — because the expensive years are the ones after launch.",
+        },
+        {
+          title: "Yours at every level",
+          description:
+            "Your repository, your infrastructure accounts, your data, with documentation good enough for another team to pick up.",
+        },
+      ],
+    },
+    capabilities: [
+      {
+        title: "Line-of-business applications",
+        description:
+          "Systems built around a specific operational process — quoting, scheduling, compliance, case management, fulfilment.",
+      },
+      {
+        title: "SaaS product development",
+        description:
+          "Multi-tenant products with subscription billing, onboarding, role management and an admin surface that scales with the customer base.",
+      },
+      {
+        title: "Internal platforms & portals",
+        description:
+          "Customer, supplier and staff portals with authentication, permissions and a complete audit trail.",
+      },
+      {
+        title: "System integration",
+        description:
+          "Connecting the software you already run — accounting, CRM, payments, logistics — behind one documented interface.",
+      },
+      {
+        title: "Legacy modernisation",
+        description:
+          "Replacing ageing systems incrementally, running old and new in parallel rather than betting the business on a single cutover.",
+      },
+      {
+        title: "APIs & platform services",
+        description:
+          "Versioned, documented APIs for partners, mobile clients and internal consumers.",
+      },
+    ],
+    process: [
+      {
+        title: "Process discovery",
+        description:
+          "We map how the work actually happens, which usually differs from how it is documented, and where the time and errors go.",
+      },
+      {
+        title: "Scope & architecture",
+        description:
+          "Build-versus-buy decided line by line, then data model, integrations, hosting and a phased delivery plan written down.",
+      },
+      {
+        title: "Design & prototype",
+        description:
+          "Flows and interface for the real states, validated with the people who will use it daily before code is committed to.",
+      },
+      {
+        title: "Iterative build",
+        description:
+          "Working software on a staging environment throughout, with automated tests and reviews on every change.",
+      },
+      {
+        title: "Rollout & ownership",
+        description:
+          "Migration, training, monitoring and documentation — then ongoing support on terms that suit you.",
+      },
+    ],
+    toolkit: [
+      { group: "Application", items: ["TypeScript", "Next.js", "React", "Node.js"] },
+      { group: "Services", items: ["NestJS", "Laravel", "REST APIs", "GraphQL"] },
+      { group: "Data", items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"] },
+      { group: "Infrastructure", items: ["AWS", "Docker", "CI/CD", "Vercel"] },
+      { group: "Quality", items: ["Automated tests", "Code review", "Monitoring"] },
+    ],
+    benefits: [
+      {
+        title: "The system fits the process",
+        description:
+          "No bending the operation to suit a vendor's assumptions about how your industry works.",
+      },
+      {
+        title: "Administrative load stops scaling with revenue",
+        description:
+          "Volume can grow without the back-office headcount growing at the same rate.",
+      },
+      {
+        title: "One source of truth",
+        description:
+          "Data entered once and available everywhere, instead of reconciled between systems by hand.",
+      },
+      {
+        title: "An asset you own",
+        description:
+          "Custom software is on your balance sheet, not rented per seat per month forever.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Isn't custom software more expensive than buying a product?",
+        answer:
+          "Up front, usually yes. Over several years it often is not, once per-seat licensing, the cost of workarounds and the staff time lost to manual steps are counted. We will tell you honestly when an off-the-shelf product is the better answer — that conversation happens in discovery, before anyone commits.",
+      },
+      {
+        question: "How long does a custom build take?",
+        answer:
+          "A focused first release is typically three to four months. Larger platforms run longer and are delivered in phases, so something usable is in production well before the full scope is complete.",
+      },
+      {
+        question: "What happens if we stop working with you?",
+        answer:
+          "You carry on. The repository, the infrastructure accounts and the documentation are yours throughout, written so another competent team can take over. We would rather be kept because the work is good.",
+      },
+      {
+        question: "Can you work with our existing systems?",
+        answer:
+          "Yes — most builds are integrations as much as they are new code. We connect to the accounting, CRM and operational software you already run rather than insisting on replacing it.",
+      },
+    ],
+  },
+
+  {
+    slug: "erp-business-systems",
+    title: "ERP & Business Systems",
+    shortTitle: "ERP & Business Systems",
+    icon: "building",
+    accent: "aqua",
+    tagline:
+      "Custom ERP and operational systems connecting finance, inventory, sales, purchasing, CRM and reporting.",
+    summary:
+      "One connected system across finance, stock, purchasing, sales, CRM, workflows and reporting — built to match how your business runs, or fitted around the ERP you already have.",
+    hero: {
+      eyebrow: "ERP & Business Systems",
+      heading: "One system your whole operation actually runs on.",
+      body: "Finance, inventory, purchasing, sales, CRM and reporting connected properly — so a number entered once is correct everywhere, and month-end stops being an archaeology exercise.",
+    },
+    problem: {
+      heading: "Every department has a system. None of them agree.",
+      body: "Stock lives in one place, invoices in another, the customer history in a third, and the numbers the board sees are stitched together in a spreadsheet each month. Nobody trusts a figure until someone has checked it against two other systems.",
+      symptoms: [
+        "Stock levels that are right in one system and wrong in the next",
+        "Purchase orders raised outside any system that tracks them",
+        "Month-end taking days of manual reconciliation",
+        "No reliable view of margin by product, customer or job",
+        "Approvals happening over email, with no record of who approved what",
+      ],
+    },
+    solution: {
+      heading: "Connect the operation around one trustworthy record.",
+      body: "Whether that means building a custom ERP, extending the one you run, or integrating several systems behind a single source of truth depends on where you are. We assess that first — replacing a working finance system is rarely the right opening move.",
+      pillars: [
+        {
+          title: "Modelled on your actual operation",
+          description:
+            "Your stock rules, your approval thresholds, your pricing logic — not a generic template you have to adapt around.",
+        },
+        {
+          title: "Controlled and auditable",
+          description:
+            "Role-based permissions, approval workflows and a complete audit trail on every transaction and master-data change.",
+        },
+        {
+          title: "Adopted in phases",
+          description:
+            "Delivered module by module against a migration plan, so the business keeps running while the system comes together.",
+        },
+      ],
+    },
+    capabilities: [
+      {
+        title: "Inventory & warehouse",
+        description:
+          "Multi-location stock, batch and serial tracking, transfers, adjustments, stock takes and valuation.",
+      },
+      {
+        title: "Purchasing & suppliers",
+        description:
+          "Requisitions, purchase orders, approval thresholds, goods receipt and supplier invoice matching.",
+      },
+      {
+        title: "Sales & CRM",
+        description:
+          "Quotes, orders, pricing rules and contract pricing, with the customer and their history in one record.",
+      },
+      {
+        title: "Finance & reporting",
+        description:
+          "Invoicing, payments, credit control and management reporting, or a clean integration with the accounting system you already use.",
+      },
+      {
+        title: "Workflow automation",
+        description:
+          "Approvals, notifications and document generation that follow your rules instead of somebody's inbox.",
+      },
+      {
+        title: "Dashboards & analytics",
+        description:
+          "Operational and management views built on the live record rather than an exported spreadsheet.",
+      },
+    ],
+    process: [
+      {
+        title: "Operational audit",
+        description:
+          "Map the process end to end across departments, and identify where data is re-entered, reconciled or lost.",
+      },
+      {
+        title: "Build, extend or integrate",
+        description:
+          "An honest assessment of whether you need a new system, an extension of the current one, or integration between what exists.",
+      },
+      {
+        title: "Data model & migration plan",
+        description:
+          "Master data, transactional structure, cutover sequence and how the historical record comes across.",
+      },
+      {
+        title: "Phased delivery",
+        description:
+          "Module by module into production, each one live and being used before the next begins.",
+      },
+      {
+        title: "Training & support",
+        description:
+          "The people who use it daily are trained on it, with documentation and a support arrangement after go-live.",
+      },
+    ],
+    toolkit: [
+      { group: "Application", items: ["Next.js", "TypeScript", "React"] },
+      { group: "Services", items: ["Node.js", "NestJS", "Laravel", "REST APIs"] },
+      { group: "Data", items: ["PostgreSQL", "MySQL", "Redis"] },
+      { group: "Integration", items: ["Accounting APIs", "Payment gateways", "EDI"] },
+      { group: "Operations", items: ["Role-based access", "Audit logging", "Backups"] },
+    ],
+    benefits: [
+      {
+        title: "Numbers you can act on",
+        description:
+          "One record means stock, margin and cash position agree wherever you look at them.",
+      },
+      {
+        title: "Faster month-end",
+        description:
+          "Reconciliation shrinks when data is captured once at the point it happens rather than re-keyed later.",
+      },
+      {
+        title: "Control without bottlenecks",
+        description:
+          "Approval rules enforced by the system, so authority is delegated safely instead of routed through one person.",
+      },
+      {
+        title: "Room to grow",
+        description:
+          "New locations, products or entities are configuration rather than another parallel spreadsheet.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Should we build an ERP or buy one?",
+        answer:
+          "Buy, if a standard product covers your process without heavy modification — that is genuinely the cheaper path. Custom becomes the better answer when the way you handle stock, pricing or fulfilment is part of why customers choose you, and every product on the market forces you to compromise it. We give you that assessment before any build is proposed.",
+      },
+      {
+        question: "Can you work with the ERP we already have?",
+        answer:
+          "Yes. Extending an existing system, building the modules it lacks, or integrating it with your other software is often lower risk and lower cost than replacing it.",
+      },
+      {
+        question: "How do you handle data migration?",
+        answer:
+          "With a written migration plan, a full dry run against real data, and reconciliation reports comparing old and new before cutover. Historical data is migrated where it has ongoing value and archived where it does not.",
+      },
+      {
+        question: "How disruptive is the rollout?",
+        answer:
+          "We deliver module by module rather than switching everything on one weekend. Each module goes live and is being used before the next starts, which keeps the risk contained and the business running.",
+      },
+    ],
+  },
+
   {
     slug: "web-development",
     title: "Web Development",
@@ -356,6 +674,168 @@ export const services: Service[] = [
   },
 
   {
+    slug: "ai-automation",
+    title: "AI & Automation",
+    shortTitle: "AI & Automation",
+    icon: "bot",
+    accent: "mint",
+    tagline:
+      "AI-powered workflows and automation that reduce repetitive work and improve efficiency.",
+    summary:
+      "Practical automation applied to the processes that actually consume your team's week — document handling, support triage, data entry and system-to-system handoffs, with a human in the loop where it matters.",
+    hero: {
+      eyebrow: "AI & Automation",
+      heading: "Automation aimed at the work your team repeats every day.",
+      body: "We start from the process, not the model. Where AI genuinely reduces manual effort, we build it — with clear boundaries, human review where it matters, and a measurable before-and-after.",
+    },
+    problem: {
+      heading: "Skilled people spending their week on copy-and-paste.",
+      body: "Most businesses have a handful of processes that quietly consume enormous amounts of time: re-keying data between systems, sorting inbound requests, extracting figures from documents, writing the same reply for the hundredth time. It is expensive, it is error-prone, and it is invisible on any dashboard.",
+      symptoms: [
+        "The same data entered by hand into two or three different systems",
+        "Inbound email and support tickets sorted manually before anyone can act",
+        "Information trapped in PDFs, invoices and scanned documents",
+        "Reports assembled by hand every week from several sources",
+        "Response times set by whoever happens to be available",
+      ],
+    },
+    solution: {
+      heading: "Map the process. Automate the repeatable part. Keep judgement human.",
+      body: "We audit where time actually goes, then automate the steps that are genuinely rule-based or language-based. AI handles classification, extraction and drafting; your team keeps the decisions. Everything is logged, reviewable and reversible.",
+      pillars: [
+        {
+          title: "Process first",
+          description:
+            "We measure the current process before proposing anything. If automation isn't the answer, we say so.",
+        },
+        {
+          title: "Human in the loop",
+          description:
+            "Confidence thresholds and review queues, so anything uncertain reaches a person instead of going out wrong.",
+        },
+        {
+          title: "Auditable by design",
+          description:
+            "Every automated action is logged with its inputs and reasoning, so outcomes can be explained and corrected.",
+        },
+      ],
+    },
+    capabilities: [
+      {
+        title: "Workflow automation",
+        description:
+          "Connecting the systems you already run so information moves without a person carrying it.",
+      },
+      {
+        title: "Document & data processing",
+        description:
+          "Extracting structured data from invoices, contracts, forms and reports, with validation rules.",
+      },
+      {
+        title: "AI assistants",
+        description:
+          "Internal assistants grounded in your own documentation, procedures and data.",
+      },
+      {
+        title: "Customer support automation",
+        description:
+          "Triage, routing, draft replies and deflection of repeat questions — with escalation paths that work.",
+      },
+      {
+        title: "AI features in existing products",
+        description:
+          "Search, summarisation, classification and generation added to software you already run.",
+      },
+      {
+        title: "Systems integration",
+        description:
+          "CRM, ERP, helpdesk, spreadsheets and internal databases connected behind one automated flow.",
+      },
+    ],
+    process: [
+      {
+        title: "Process audit",
+        description:
+          "Map the current workflow and measure the time, volume and error rate it carries today.",
+      },
+      {
+        title: "Opportunity assessment",
+        description:
+          "Identify which steps are worth automating and which are better left to a person.",
+      },
+      {
+        title: "Pilot",
+        description:
+          "Build a narrow automation for one process and run it alongside the manual one.",
+      },
+      {
+        title: "Integrate & harden",
+        description:
+          "Connect production systems, add validation, monitoring, logging and fallback behaviour.",
+      },
+      {
+        title: "Measure & extend",
+        description:
+          "Compare against the baseline, then apply the same pattern to the next process.",
+      },
+    ],
+    toolkit: [
+      { group: "Models", items: ["Claude API", "OpenAI API", "LLM integrations"] },
+      {
+        group: "Patterns",
+        items: ["RAG", "Structured extraction", "Tool use", "Evals"],
+      },
+      { group: "Automation", items: ["n8n", "Zapier", "Make", "Custom services"] },
+      { group: "Data", items: ["Vector search", "PostgreSQL", "Document stores"] },
+      { group: "Operations", items: ["Logging", "Human review queues", "Monitoring"] },
+    ],
+    benefits: [
+      {
+        title: "Hours back, every week",
+        description:
+          "Repetitive work moves off your team's plate, and we measure how much against a real baseline.",
+      },
+      {
+        title: "Fewer transcription errors",
+        description:
+          "Automated extraction and validation catch the mistakes manual re-keying produces.",
+      },
+      {
+        title: "Consistent response times",
+        description:
+          "Triage and routing happen immediately, regardless of who is at their desk.",
+      },
+      {
+        title: "Capacity without headcount",
+        description:
+          "Volume can grow without the administrative load growing at the same rate.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you integrate AI into our existing application?",
+        answer:
+          "Yes — that is one of the most common requests we get. We work within your existing stack, add the capability behind a defined interface, and avoid a rewrite wherever possible.",
+      },
+      {
+        question: "What about our data privacy?",
+        answer:
+          "We scope exactly what data reaches a model, use providers with no-training commitments on API traffic, and can keep sensitive processing inside your own infrastructure where requirements demand it.",
+      },
+      {
+        question: "How do you stop AI producing wrong answers?",
+        answer:
+          "By grounding responses in your own data, constraining output to defined structures, setting confidence thresholds that route uncertain cases to a human, and evaluating against a test set before anything goes live.",
+      },
+      {
+        question: "Where should we start?",
+        answer:
+          "With one high-volume, low-risk process. A narrow pilot produces a measurable result quickly and tells you far more than a broad strategy exercise.",
+      },
+    ],
+  },
+
+  {
     slug: "ui-ux-design",
     title: "UI/UX Design",
     shortTitle: "UI/UX Design",
@@ -516,168 +996,6 @@ export const services: Service[] = [
         question: "Is accessibility included?",
         answer:
           "WCAG 2.2 AA is our default target. Contrast, focus order, keyboard operability and touch targets are designed in from the start.",
-      },
-    ],
-  },
-
-  {
-    slug: "ai-automation",
-    title: "AI Automation",
-    shortTitle: "AI Automation",
-    icon: "bot",
-    accent: "mint",
-    tagline:
-      "AI-powered workflows and automation that reduce repetitive work and improve efficiency.",
-    summary:
-      "Practical automation applied to the processes that actually consume your team's week — document handling, support triage, data entry and system-to-system handoffs, with a human in the loop where it matters.",
-    hero: {
-      eyebrow: "AI Automation",
-      heading: "Automation aimed at the work your team repeats every day.",
-      body: "We start from the process, not the model. Where AI genuinely reduces manual effort, we build it — with clear boundaries, human review where it matters, and a measurable before-and-after.",
-    },
-    problem: {
-      heading: "Skilled people spending their week on copy-and-paste.",
-      body: "Most businesses have a handful of processes that quietly consume enormous amounts of time: re-keying data between systems, sorting inbound requests, extracting figures from documents, writing the same reply for the hundredth time. It is expensive, it is error-prone, and it is invisible on any dashboard.",
-      symptoms: [
-        "The same data entered by hand into two or three different systems",
-        "Inbound email and support tickets sorted manually before anyone can act",
-        "Information trapped in PDFs, invoices and scanned documents",
-        "Reports assembled by hand every week from several sources",
-        "Response times set by whoever happens to be available",
-      ],
-    },
-    solution: {
-      heading: "Map the process. Automate the repeatable part. Keep judgement human.",
-      body: "We audit where time actually goes, then automate the steps that are genuinely rule-based or language-based. AI handles classification, extraction and drafting; your team keeps the decisions. Everything is logged, reviewable and reversible.",
-      pillars: [
-        {
-          title: "Process first",
-          description:
-            "We measure the current process before proposing anything. If automation isn't the answer, we say so.",
-        },
-        {
-          title: "Human in the loop",
-          description:
-            "Confidence thresholds and review queues, so anything uncertain reaches a person instead of going out wrong.",
-        },
-        {
-          title: "Auditable by design",
-          description:
-            "Every automated action is logged with its inputs and reasoning, so outcomes can be explained and corrected.",
-        },
-      ],
-    },
-    capabilities: [
-      {
-        title: "Workflow automation",
-        description:
-          "Connecting the systems you already run so information moves without a person carrying it.",
-      },
-      {
-        title: "Document & data processing",
-        description:
-          "Extracting structured data from invoices, contracts, forms and reports, with validation rules.",
-      },
-      {
-        title: "AI assistants",
-        description:
-          "Internal assistants grounded in your own documentation, procedures and data.",
-      },
-      {
-        title: "Customer support automation",
-        description:
-          "Triage, routing, draft replies and deflection of repeat questions — with escalation paths that work.",
-      },
-      {
-        title: "AI features in existing products",
-        description:
-          "Search, summarisation, classification and generation added to software you already run.",
-      },
-      {
-        title: "Systems integration",
-        description:
-          "CRM, ERP, helpdesk, spreadsheets and internal databases connected behind one automated flow.",
-      },
-    ],
-    process: [
-      {
-        title: "Process audit",
-        description:
-          "Map the current workflow and measure the time, volume and error rate it carries today.",
-      },
-      {
-        title: "Opportunity assessment",
-        description:
-          "Identify which steps are worth automating and which are better left to a person.",
-      },
-      {
-        title: "Pilot",
-        description:
-          "Build a narrow automation for one process and run it alongside the manual one.",
-      },
-      {
-        title: "Integrate & harden",
-        description:
-          "Connect production systems, add validation, monitoring, logging and fallback behaviour.",
-      },
-      {
-        title: "Measure & extend",
-        description:
-          "Compare against the baseline, then apply the same pattern to the next process.",
-      },
-    ],
-    toolkit: [
-      { group: "Models", items: ["Claude API", "OpenAI API", "LLM integrations"] },
-      {
-        group: "Patterns",
-        items: ["RAG", "Structured extraction", "Tool use", "Evals"],
-      },
-      { group: "Automation", items: ["n8n", "Zapier", "Make", "Custom services"] },
-      { group: "Data", items: ["Vector search", "PostgreSQL", "Document stores"] },
-      { group: "Operations", items: ["Logging", "Human review queues", "Monitoring"] },
-    ],
-    benefits: [
-      {
-        title: "Hours back, every week",
-        description:
-          "Repetitive work moves off your team's plate, and we measure how much against a real baseline.",
-      },
-      {
-        title: "Fewer transcription errors",
-        description:
-          "Automated extraction and validation catch the mistakes manual re-keying produces.",
-      },
-      {
-        title: "Consistent response times",
-        description:
-          "Triage and routing happen immediately, regardless of who is at their desk.",
-      },
-      {
-        title: "Capacity without headcount",
-        description:
-          "Volume can grow without the administrative load growing at the same rate.",
-      },
-    ],
-    faqs: [
-      {
-        question: "Can you integrate AI into our existing application?",
-        answer:
-          "Yes — that is one of the most common requests we get. We work within your existing stack, add the capability behind a defined interface, and avoid a rewrite wherever possible.",
-      },
-      {
-        question: "What about our data privacy?",
-        answer:
-          "We scope exactly what data reaches a model, use providers with no-training commitments on API traffic, and can keep sensitive processing inside your own infrastructure where requirements demand it.",
-      },
-      {
-        question: "How do you stop AI producing wrong answers?",
-        answer:
-          "By grounding responses in your own data, constraining output to defined structures, setting confidence thresholds that route uncertain cases to a human, and evaluating against a test set before anything goes live.",
-      },
-      {
-        question: "Where should we start?",
-        answer:
-          "With one high-volume, low-risk process. A narrow pilot produces a measurable result quickly and tells you far more than a broad strategy exercise.",
       },
     ],
   },
@@ -1207,12 +1525,6 @@ export const supportingServices: {
     description:
       "Visual direction, layout systems and responsive design for marketing sites — delivered alongside development or handed to your own build team.",
     icon: "layers",
-  },
-  {
-    title: "Business & Software Solutions",
-    description:
-      "Custom internal tools, portals and process software for operations that spreadsheets and off-the-shelf products have outgrown.",
-    icon: "building",
   },
   {
     title: "Maintenance & Support",

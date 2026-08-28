@@ -130,14 +130,25 @@ function renderEnquiry(input: ContactInput): string {
   return lines.join("\n");
 }
 
+/**
+ * A variable that is declared but left blank is far more common than one that
+ * is absent, and `??` only falls back on undefined — an empty `CONTACT_TO_EMAIL`
+ * would otherwise produce an enquiry addressed to nobody.
+ */
+function envOr(name: string, fallback: string): string {
+  const value = process.env[name]?.trim();
+  return value ? value : fallback;
+}
+
 export async function sendContactEnquiry(input: ContactInput): Promise<EmailResult> {
   const transport = getTransport();
 
   return transport.send({
-    to: process.env.CONTACT_TO_EMAIL ?? siteConfig.contact.email,
-    from:
-      process.env.CONTACT_FROM_EMAIL ??
+    to: envOr("CONTACT_TO_EMAIL", siteConfig.contact.email),
+    from: envOr(
+      "CONTACT_FROM_EMAIL",
       `${siteConfig.name} Website <website@cherbix.com>`,
+    ),
     replyTo: input.email,
     subject: `New enquiry — ${input.service} — ${input.name}`,
     text: renderEnquiry(input),
