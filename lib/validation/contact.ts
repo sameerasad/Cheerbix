@@ -6,14 +6,22 @@ import { z } from "zod";
  * anything arriving over HTTP is untrusted.
  */
 
+/**
+ * Ordered to match the site's service hierarchy. "Not sure" is deliberate:
+ * the Solutions page tells visitors they do not need to know which discipline
+ * fixes their problem, so the form must not contradict that.
+ */
 export const SERVICE_OPTIONS = [
+  "Custom Software Development",
+  "ERP & Business Systems",
   "Web Development",
   "Mobile App",
+  "AI & Automation",
   "UI/UX Design",
-  "AI Automation",
   "Digital Marketing",
   "SEO",
   "Content Writing",
+  "Not sure / Help me choose",
   "Other",
 ] as const;
 

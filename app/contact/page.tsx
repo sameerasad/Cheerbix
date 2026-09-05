@@ -79,6 +79,7 @@ export default function ContactPage() {
                     icon={<Clock size={16} strokeWidth={1.7} aria-hidden="true" />}
                     label="Availability"
                     value={siteConfig.contact.availability}
+                    note={siteConfig.contact.coverage}
                   />
                   {siteConfig.contact.location ? (
                     <ContactRow
@@ -165,11 +166,14 @@ function ContactRow({
   label,
   value,
   href,
+  note,
 }: {
   icon: React.ReactNode;
   label: string;
   value: string;
   href?: string;
+  /** Secondary line — used to qualify availability with time-zone coverage. */
+  note?: string;
 }) {
   return (
     <div className="flex items-start gap-3.5 bg-ink-900/40 p-4 sm:p-5">
@@ -188,6 +192,11 @@ function ContactRow({
           ) : (
             value
           )}
+          {note ? (
+            <span className="mt-1 block text-[0.8125rem] text-fg-faint">
+              {note}
+            </span>
+          ) : null}
         </dd>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -11,6 +11,7 @@ import { Reveal } from "@/components/ui/animated";
 import { AbstractCover, GridBackdrop } from "@/components/ui/decor";
 import { JsonLd } from "@/components/ui/json-ld";
 import {
+  getAuthor,
   getPost,
   getRelatedPosts,
   posts,
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/blog/${post.slug}`,
     article: {
       publishedTime: post.publishedAt,
-      author: post.author,
+      author: getAuthor(post.author).name,
       section: post.category,
     },
   });
@@ -59,6 +60,7 @@ export default async function ArticlePage({ params }: PageProps) {
   if (!post) notFound();
 
   const related = getRelatedPosts(post.slug, 3);
+  const author = getAuthor(post.author);
 
   return (
     <>
@@ -69,7 +71,7 @@ export default async function ArticlePage({ params }: PageProps) {
             description: post.excerpt,
             path: `/blog/${post.slug}`,
             publishedAt: post.publishedAt,
-            author: post.author,
+            author: getAuthor(post.author).name,
           }),
           breadcrumbSchema([
             { name: "Home", path: "/" },
@@ -87,7 +89,7 @@ export default async function ArticlePage({ params }: PageProps) {
           <Container size="narrow" className="relative">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 text-[0.8125rem] text-fg-faint transition-colors hover:text-fg"
+              className="inline-flex items-center gap-2 py-1 text-[0.8125rem] text-fg-faint transition-colors hover:text-fg"
             >
               <ArrowLeft size={14} aria-hidden="true" />
               All articles
@@ -104,7 +106,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 <span aria-hidden="true">·</span>
                 <span>{post.readingMinutes} min read</span>
                 <span aria-hidden="true">·</span>
-                <span>{post.author}</span>
+                <span>{author.name}</span>
               </div>
 
               <h1 className="mt-6 text-[2rem] font-semibold leading-[1.1] tracking-tightest text-fg sm:text-4xl lg:text-[3rem]">
@@ -139,6 +141,53 @@ export default async function ArticlePage({ params }: PageProps) {
                 <Block key={index} block={block} />
               ))}
             </div>
+
+            {post.related.length > 0 ? (
+              <Reveal>
+                <aside
+                  aria-labelledby="applies"
+                  className="mt-14 rounded-xl border border-line bg-ink-900/50 p-6"
+                >
+                  <h2
+                    id="applies"
+                    className="text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-fg-faint"
+                  >
+                    Where this applies
+                  </h2>
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {post.related.map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="inline-flex items-center gap-1.5 rounded-lg border border-line px-3.5 py-2 text-sm text-fg-muted transition-colors hover:border-line-strong hover:text-fg"
+                        >
+                          {link.label}
+                          <ArrowUpRight size={13} aria-hidden="true" />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </aside>
+              </Reveal>
+            ) : null}
+
+            <Reveal>
+              <div className="mt-6 flex gap-4 rounded-xl border border-line bg-ink-900/50 p-6">
+                <span
+                  aria-hidden="true"
+                  className="grid size-11 shrink-0 place-items-center rounded-full bg-linear-to-br from-brand-600/30 to-aqua-500/20 text-sm font-medium text-brand-100 ring-1 ring-inset ring-line"
+                >
+                  {author.initials}
+                </span>
+                <div>
+                  <p className="text-sm font-medium text-fg">{author.name}</p>
+                  <p className="text-xs text-fg-faint">{author.role}</p>
+                  <p className="mt-3 text-[0.9375rem] leading-relaxed text-fg-muted">
+                    {author.bio}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
           </Container>
         </Section>
       </article>

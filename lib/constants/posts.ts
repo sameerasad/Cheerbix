@@ -7,6 +7,37 @@
  * two things the pages import, so a CMS adapter can satisfy the same contract.
  */
 
+export type Author = {
+  id: string;
+  name: string;
+  role: string;
+  /** Shown under each article. Keep it factual — no invented credentials. */
+  bio: string;
+  initials: string;
+};
+
+/**
+ * Articles are published under a Cherbix byline because they are written and
+ * reviewed by the team collectively. To attribute one to a named person, add
+ * them here and set the post's `author` to their id.
+ */
+export const authors: Record<string, Author> = {
+  "cherbix-team": {
+    id: "cherbix-team",
+    name: "The Cherbix Team",
+    role: "Engineering & editorial",
+    bio: "Written and reviewed by the Cherbix engineers who do this work day to day — the same people who build the software, run the migrations and wire up the automation described here.",
+    initials: "CX",
+  },
+};
+
+export function getAuthor(id: string): Author {
+  return authors[id] ?? authors["cherbix-team"];
+}
+
+/** A contextual link out of an article. Keep it to two or three per post. */
+export type PostLink = { label: string; href: string };
+
 export type PostBlock =
   | { type: "paragraph"; text: string }
   | { type: "heading"; text: string }
@@ -27,7 +58,10 @@ export type Post = {
   /** ISO date — drives sorting, <time> elements and structured data. */
   publishedAt: string;
   readingMinutes: number;
+  /** Key into `authors`. */
   author: string;
+  /** Where this subject is actually applied on the site. */
+  related: PostLink[];
   /** Two-colour gradient for the abstract article cover. */
   palette: [string, string];
   featured: boolean;
@@ -43,7 +77,12 @@ export const posts: Post[] = [
     category: "Web Development",
     publishedAt: "2026-07-28",
     readingMinutes: 7,
-    author: "Cherbix Team",
+    author: "cherbix-team",
+    related: [
+      { label: "Web Development", href: "/services/web-development" },
+      { label: "Replace an ageing website", href: "/solutions#replatform" },
+      { label: "B2B Commerce Storefront", href: "/work/commerce-replatform" },
+    ],
     palette: ["#0b5cf5", "#12c2e9"],
     featured: true,
     body: [
@@ -113,7 +152,12 @@ export const posts: Post[] = [
     category: "AI & Automation",
     publishedAt: "2026-07-14",
     readingMinutes: 8,
-    author: "Cherbix Team",
+    author: "cherbix-team",
+    related: [
+      { label: "AI & Automation", href: "/services/ai-automation" },
+      { label: "Automate manual operations", href: "/solutions#automate" },
+      { label: "Operations Automation Engine", href: "/work/ai-operations-automation" },
+    ],
     palette: ["#2bd9a0", "#12c2e9"],
     featured: true,
     body: [
@@ -179,7 +223,12 @@ export const posts: Post[] = [
     category: "SEO",
     publishedAt: "2026-06-30",
     readingMinutes: 9,
-    author: "Cherbix Team",
+    author: "cherbix-team",
+    related: [
+      { label: "SEO", href: "/services/seo" },
+      { label: "Replace an ageing website", href: "/solutions#replatform" },
+      { label: "B2B Commerce Storefront", href: "/work/commerce-replatform" },
+    ],
     palette: ["#12c2e9", "#4d95ff"],
     featured: false,
     body: [
@@ -239,7 +288,12 @@ export const posts: Post[] = [
     category: "Mobile",
     publishedAt: "2026-06-12",
     readingMinutes: 6,
-    author: "Cherbix Team",
+    author: "cherbix-team",
+    related: [
+      { label: "Mobile App Development", href: "/services/mobile-app-development" },
+      { label: "Patient Companion App", href: "/work/healthcare-patient-app" },
+      { label: "Field Service App", href: "/work/field-service-mobile" },
+    ],
     palette: ["#33d9f2", "#0b5cf5"],
     featured: false,
     body: [
@@ -283,7 +337,11 @@ export const posts: Post[] = [
     category: "Digital Marketing",
     publishedAt: "2026-05-26",
     readingMinutes: 6,
-    author: "Cherbix Team",
+    author: "cherbix-team",
+    related: [
+      { label: "Digital Marketing", href: "/services/digital-marketing" },
+      { label: "Grow organic and paid demand", href: "/solutions#demand" },
+    ],
     palette: ["#1e7bff", "#7bb0ff"],
     featured: false,
     body: [
@@ -331,7 +389,12 @@ export const posts: Post[] = [
     category: "Business",
     publishedAt: "2026-05-08",
     readingMinutes: 5,
-    author: "Cherbix Team",
+    author: "cherbix-team",
+    related: [
+      { label: "Custom Software Development", href: "/services/custom-software-development" },
+      { label: "ERP & Business Systems", href: "/services/erp-business-systems" },
+      { label: "Enterprise ERP Platform", href: "/work/enterprise-erp-platform" },
+    ],
     palette: ["#0846c4", "#12c2e9"],
     featured: false,
     body: [

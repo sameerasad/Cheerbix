@@ -18,9 +18,6 @@ export const metadata: Metadata = buildMetadata({
   path: "/work",
 });
 
-/** Alternates cover treatments so the grid does not read as a repeated tile. */
-const coverVariants = ["orbit", "grid", "wave"] as const;
-
 export default function WorkPage() {
   return (
     <>
@@ -55,6 +52,10 @@ export default function WorkPage() {
 
       <Section>
         <Container>
+          {/* The grid has no visible heading, but the document outline needs
+              one so assistive tech does not jump h1 -> h3. */}
+          <h2 className="sr-only">All builds</h2>
+
           {projects.length === 0 ? (
             <EmptyWork />
           ) : (
@@ -72,7 +73,6 @@ export default function WorkPage() {
                     <PortfolioCard
                       project={project}
                       size={isWide ? "feature" : "default"}
-                      coverVariant={coverVariants[index % coverVariants.length]}
                     />
                   </StaggerItem>
                 );

@@ -59,7 +59,9 @@ export default function SolutionsPage() {
           <StaggerGroup as="ul" className="grid gap-4 lg:grid-cols-2">
             {solutions.map((solution) => (
               <StaggerItem as="li" key={solution.id}>
-                <article className="flex h-full flex-col rounded-2xl border border-line bg-ink-850/50 p-6 transition-[border-color,background-color] duration-300 hover:border-line-strong hover:bg-ink-800/60 sm:p-8">
+                <article
+                  id={solution.id}
+                  className="scroll-mt-28 flex h-full flex-col rounded-2xl border border-line bg-ink-850/50 p-6 transition-[border-color,background-color] duration-300 hover:border-line-strong hover:bg-ink-800/60 sm:p-8">
                   {/* The situation, quoted in the client's voice */}
                   <p className="border-l-2 border-aqua-500/40 pl-4 text-[0.9375rem] italic leading-relaxed text-fg-muted">
                     “{solution.situation}”
@@ -152,9 +154,9 @@ export default function SolutionsPage() {
       <GrowthSection />
 
       <CTASection
-        title="Which of these sounds like you?"
+        title="Tell us what you're trying to solve."
         description="Describe the situation in your own words. We'll tell you what the work involves and whether we're the right team for it."
-        primary={{ label: "Get a Project Estimate", href: "/contact" }}
+        primary={{ label: "Start a Project", href: "/contact" }}
         secondary={{ label: "See our work", href: "/work" }}
       />
     </>

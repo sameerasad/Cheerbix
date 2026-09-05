@@ -170,8 +170,8 @@ export function ContactForm() {
       <div className="grid gap-5 sm:grid-cols-2">
         <SelectField
           id="service"
-          label="Service required"
-          placeholder="Select a service"
+          label="What do you need help with?"
+          placeholder="Select an option"
           options={SERVICE_OPTIONS}
           value={values.service}
           error={errors.service}
