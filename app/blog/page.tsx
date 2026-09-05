@@ -56,6 +56,9 @@ export default function BlogPage() {
 
       <Section>
         <Container>
+          {/* Keeps the document outline continuous: the cards below are h3. */}
+          <h2 className="sr-only">Articles</h2>
+
           {sortedPosts.length === 0 ? (
             <EmptyBlog />
           ) : (

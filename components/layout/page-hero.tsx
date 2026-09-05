@@ -68,7 +68,7 @@ export function PageHero({
                       <>
                         <Link
                           href={crumb.href}
-                          className="transition-colors hover:text-fg"
+                          className="inline-block py-1 transition-colors hover:text-fg"
                         >
                           {crumb.name}
                         </Link>
