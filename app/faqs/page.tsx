@@ -79,7 +79,7 @@ export default function FAQsPage() {
       <CTASection
         title="Still have a question?"
         description="Ask it directly. We'd rather answer it now than have you guess."
-        primary={{ label: "Contact us", href: "/contact" }}
+        primary={{ label: "Start a Project", href: "/contact" }}
       />
     </>
   );

@@ -17,7 +17,7 @@ import { breadcrumbSchema, buildMetadata } from "@/lib/utils/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Services",
   description:
-    "Web development, mobile apps, UI/UX design, AI automation, digital marketing, SEO and content writing — delivered by one team, under one plan.",
+    "Custom software, ERP and business systems, web and mobile development, AI and automation, UI/UX, marketing, SEO and content — delivered by one team, under one plan.",
   path: "/services",
 });
 
@@ -33,8 +33,8 @@ export default function ServicesPage() {
 
       <PageHero
         eyebrow="Services"
-        title="Everything you need to build, launch and grow digitally."
-        description="Seven core disciplines, delivered by one team. Most engagements combine several of them — that is the point of using a single partner rather than assembling three."
+        title="Everything you need to build, launch and scale software."
+        description="Nine core disciplines, delivered by one team. Most engagements combine several of them — that is the point of using a single partner rather than assembling three."
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Services", href: "/services" },
@@ -42,7 +42,7 @@ export default function ServicesPage() {
         actions={
           <>
             <Button href="/contact" size="lg">
-              Get a Project Estimate
+              Start a Project
             </Button>
             <Button href="/work" variant="secondary" size="lg">
               View Our Work

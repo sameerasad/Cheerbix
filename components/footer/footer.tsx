@@ -26,7 +26,8 @@ export function Footer() {
             <LogoLink height={34} />
 
             <p className="mt-6 max-w-xs text-[0.9375rem] leading-relaxed text-fg-muted">
-              Digital solutions for businesses ready to build, automate, and grow.
+              Software and digital solutions for businesses ready to build, automate
+              and scale.
             </p>
 
             <ul className="mt-8 space-y-3 text-sm">
@@ -74,12 +75,15 @@ export function Footer() {
                 >
                   {group.title}
                 </h2>
-                <ul className="mt-5 space-y-3">
+                {/* Padding rather than list spacing: these are navigation
+                    links, not inline prose, so each needs a hit area of at
+                    least 24px to meet WCAG 2.2 target-size. */}
+                <ul className="mt-4 space-y-0.5">
                   {group.items.map((item) => (
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="text-sm text-fg-muted transition-colors hover:text-fg"
+                        className="inline-block py-1.5 text-sm text-fg-muted transition-colors hover:text-fg"
                       >
                         {item.label}
                       </Link>

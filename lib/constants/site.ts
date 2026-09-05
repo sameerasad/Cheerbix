@@ -15,6 +15,8 @@ type ContactDetails = {
   /** Optional. Omitted from the footer and contact page while empty. */
   location: string;
   availability: string;
+  /** Shown under availability so a visitor in another region is not put off. */
+  coverage: string;
   responseTime: string;
 };
 
@@ -26,7 +28,8 @@ const contact: ContactDetails = {
   email: "info@cherbix.com",
   phone: "",
   location: "",
-  availability: "Mon–Fri, 09:00–18:00 (GMT+5)",
+  availability: "Mon–Fri, 09:00–18:00 PKT (GMT+5)",
+  coverage: "We work with clients across time zones.",
   responseTime: "We reply to project enquiries within 1 business day.",
 };
 
