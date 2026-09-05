@@ -32,7 +32,7 @@ export function FeaturedWork() {
 
         <div className="mt-14 grid gap-4 lg:grid-cols-12">
           <Reveal className="lg:col-span-7">
-            <PortfolioCard project={lead} size="feature" coverVariant="orbit" />
+            <PortfolioCard project={lead} size="feature" />
           </Reveal>
 
           <div className="grid gap-4 lg:col-span-5">
@@ -40,14 +40,12 @@ export function FeaturedWork() {
               <PortfolioCard
                 project={second}
                 size="compact"
-                coverVariant="wave"
               />
             </Reveal>
             <Reveal delay={0.14}>
               <PortfolioCard
                 project={third}
                 size="compact"
-                coverVariant="grid"
               />
             </Reveal>
           </div>

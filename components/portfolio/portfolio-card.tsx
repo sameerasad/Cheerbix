@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-import { AbstractCover } from "@/components/ui/decor";
+import { ProjectPreview } from "@/components/portfolio/project-preview";
 import type { Project } from "@/lib/constants/projects";
 import { cn } from "@/lib/utils/cn";
 
@@ -10,7 +10,6 @@ type PortfolioCardProps = {
   className?: string;
   /** `feature` gives the cover more height and shows the technology list. */
   size?: "feature" | "default" | "compact";
-  coverVariant?: "grid" | "orbit" | "wave";
 };
 
 /**
@@ -28,7 +27,6 @@ export function PortfolioCard({
   project,
   className,
   size = "default",
-  coverVariant = "grid",
 }: PortfolioCardProps) {
   return (
     <article className={cn("group h-full", className)}>
@@ -39,10 +37,10 @@ export function PortfolioCard({
         {/* Cover */}
         <div className={cn("relative overflow-hidden", coverHeights[size])}>
           <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.04]">
-            <AbstractCover
+            <ProjectPreview
+              variant={project.preview}
               palette={project.palette}
               seed={project.slug}
-              variant={coverVariant}
             />
           </div>
 
@@ -95,7 +93,7 @@ export function PortfolioCard({
 
           {size !== "compact" ? (
             <ul className="mt-6 flex flex-wrap gap-1.5">
-              {project.technologies.slice(0, size === "feature" ? 5 : 3).map((tech) => (
+              {project.technologies.slice(0, size === "feature" ? 4 : 3).map((tech) => (
                 <li
                   key={tech}
                   className="rounded-md bg-white/[0.04] px-2 py-1 text-[0.6875rem] text-fg-faint ring-1 ring-inset ring-line"

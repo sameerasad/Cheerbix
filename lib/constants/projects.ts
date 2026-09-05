@@ -14,6 +14,8 @@
  * publication.
  */
 
+import type { PreviewVariant } from "@/components/portfolio/project-preview";
+
 export type ProjectHighlight = {
   label: string;
   /** Qualitative by design — no invented metrics. */
@@ -35,8 +37,10 @@ export type Project = {
   year: string;
   services: string[];
   technologies: string[];
-  /** Two-colour gradient used to render the project's abstract cover. */
+  /** Two-colour gradient used to tint the preview. */
   palette: [string, string];
+  /** Which product schematic represents this build. */
+  preview: PreviewVariant;
   /** Featured entries get the wide slot in the asymmetric home grid. */
   featured: boolean;
   /** The problem this class of product has to solve. */
@@ -64,6 +68,7 @@ export const projects: Project[] = [
     services: ["ERP & Business Systems", "Custom Software Development", "UI/UX Design"],
     technologies: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "Redis"],
     palette: ["#0846c4", "#33d9f2"],
+    preview: "records",
     challenge:
       "Operational software accumulates department by department. Stock lives in one system, invoices in another, customer history in a third, and the numbers the board sees are reassembled in a spreadsheet each month. Nobody fully trusts a figure until it has been checked against two other places.",
     approach: [
@@ -120,6 +125,7 @@ export const projects: Project[] = [
     services: ["Web Development", "UI/UX Design", "AI & Automation"],
     technologies: ["Next.js", "TypeScript", "NestJS", "PostgreSQL", "AWS"],
     palette: ["#0b5cf5", "#12c2e9"],
+    preview: "decision",
     challenge:
       "Lending operations commonly run on email and spreadsheets. Applications arrive as attachments, assessment happens in a workbook, and approval is a chain of replies. Nothing is auditable after the fact, underwriters duplicate the same data entry across several systems, and the applicant has no visibility into where their file sits.",
     approach: [
@@ -173,6 +179,7 @@ export const projects: Project[] = [
     services: ["Mobile App Development", "UI/UX Design"],
     technologies: ["React Native", "TypeScript", "Node.js", "PostgreSQL", "Firebase"],
     palette: ["#12c2e9", "#2bd9a0"],
+    preview: "mobile-plan",
     challenge:
       "Outpatient treatment plans are still routinely handed over as printed sheets backed up by reminder calls from an already stretched care team. Adherence depends on paper nobody keeps, and the clinic has no signal that someone has fallen off their plan until the next appointment.",
     approach: [
@@ -226,6 +233,7 @@ export const projects: Project[] = [
     services: ["Web Development", "SEO", "UI/UX Design"],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Vercel"],
     palette: ["#1e7bff", "#7bb0ff"],
+    preview: "catalogue",
     challenge:
       "Legacy trade storefronts accumulate a decade of category structure, run slowly, and are hostile on mobile — while a large share of revenue depends on organic rankings that any replatform can destroy. The technical problem and the search problem cannot be solved separately.",
     approach: [
@@ -279,6 +287,7 @@ export const projects: Project[] = [
     services: ["UI/UX Design", "Web Development"],
     technologies: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     palette: ["#4d95ff", "#0846c4"],
+    preview: "dashboard",
     challenge:
       "Years of feature additions produce dashboards where navigation reflects the internal team that built each module rather than anything a customer is trying to find out. New users need an onboarding call to accomplish tasks the product was supposed to make self-serve.",
     approach: [
@@ -332,6 +341,7 @@ export const projects: Project[] = [
     services: ["AI & Automation", "Web Development"],
     technologies: ["Next.js", "Node.js", "Claude API", "PostgreSQL", "Vector search"],
     palette: ["#2bd9a0", "#12c2e9"],
+    preview: "pipeline",
     challenge:
       "Operations teams routinely lose much of each morning sorting a shared inbox: delivery notes, invoices, customer queries and exceptions all arrive together and all get handled by hand. It is high volume, low variance, and almost entirely invisible on any dashboard.",
     approach: [
@@ -385,6 +395,7 @@ export const projects: Project[] = [
     services: ["Mobile App Development", "UI/UX Design", "Web Development"],
     technologies: ["React Native", "TypeScript", "SQLite", "Node.js", "AWS"],
     palette: ["#33d9f2", "#0b5cf5"],
+    preview: "field",
     challenge:
       "Field engineers fall back to paper whenever an app is unusable without a connection. Paperwork then reaches the office days later, invoicing lags behind the work, and photographic evidence is routinely lost between the site and the back office.",
     approach: [

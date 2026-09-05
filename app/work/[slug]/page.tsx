@@ -9,7 +9,8 @@ import { PortfolioCard } from "@/components/portfolio/portfolio-card";
 import { CTASection } from "@/components/sections/cta-section";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/ui/animated";
 import { Button } from "@/components/ui/button";
-import { AbstractCover, GridBackdrop } from "@/components/ui/decor";
+import { ProjectPreview } from "@/components/portfolio/project-preview";
+import { GridBackdrop } from "@/components/ui/decor";
 import { JsonLd } from "@/components/ui/json-ld";
 import { Eyebrow } from "@/components/ui/section-heading";
 import { getProject, projects } from "@/lib/constants/projects";
@@ -69,7 +70,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
           <nav aria-label="Breadcrumb" className="mb-8">
             <Link
               href="/work"
-              className="inline-flex items-center gap-2 text-[0.8125rem] text-fg-faint transition-colors hover:text-fg"
+              className="inline-flex items-center gap-2 py-1 text-[0.8125rem] text-fg-faint transition-colors hover:text-fg"
             >
               <ArrowLeft size={14} aria-hidden="true" />
               All work
@@ -115,10 +116,10 @@ export default async function CaseStudyPage({ params }: PageProps) {
       <Container className="relative -mt-0 pt-10 sm:pt-14">
         <Reveal>
           <div className="aspect-16/9 overflow-hidden rounded-2xl border border-line sm:aspect-21/9">
-            <AbstractCover
+            <ProjectPreview
+              variant={project.preview}
               palette={project.palette}
               seed={project.slug}
-              variant="orbit"
             />
           </div>
         </Reveal>
@@ -274,7 +275,6 @@ export default async function CaseStudyPage({ params }: PageProps) {
                   <PortfolioCard
                     project={item}
                     size="compact"
-                    coverVariant={index === 0 ? "wave" : "grid"}
                   />
                 </Reveal>
               ))}
